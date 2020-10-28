@@ -4,8 +4,8 @@ var myObstacles2 = [];
 var myBackground;
 var door = null;
 
-const canvasWith = 480;
-const canvasHeight = 270;
+const canvasWith = window.innerWidth * 0.7;
+const canvasHeight = window.innerHeight * 0.8;
 
 
 let points = 0;
