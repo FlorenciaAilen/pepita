@@ -12,8 +12,8 @@ let points = 0;
 
 
 function startGame() {
-    myGamePiece = new component(30, 30, "/img/pepita.png", 10, 120, "image");
-    myBackground = new component(canvasWith, canvasHeight, "/img/background.jpg", 0, 0, "image");
+    myGamePiece = new component(60, 60, "/img/pepita.png", 10, 120, "image");
+    myBackground = new component(canvasWith, canvasHeight, "https://i.pinimg.com/originals/84/c2/a2/84c2a238750dd630e0129f4451ba2092.jpg", 0, 0, "image");
     myGamePiece.gravity = 0.05;
     myObstacles2.push(new component(1000000000000000000000000000000000000000000, 1, "red", 0, 0));
     myObstacles2.push(new component(1000000000000000000000000000000000000000000, 1, "red", 0, canvasHeight));
@@ -139,17 +139,17 @@ function updateGameArea() {
     myGameArea.clear();
     myBackground.update();
     myGameArea.frameNo += 1;
-    if (myGameArea.frameNo == 1 || everyinterval(150)) {
+    if (myGameArea.frameNo == 1 || everyinterval(200)) {
         x = myGameArea.canvas.width;
         minHeight = 20;
         maxHeight = 200;
         height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
-        minGap = 50;
+        minGap = 100;
         maxGap = 200;
         gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
-        myObstacles.push(new component(10, height, "img/obstacle2.png", x, 0, "image"));
-        myObstacles.push(new component(10, x - height - gap, "img/obstacle.png", x, height + gap, "image"));
-    }   
+        myObstacles.push(new component(20, height, "img/obstacle2.png", x, 0, "image"));
+        myObstacles.push(new component(20, x - height - gap, "img/obstacle.png", x, height + gap, "image"));
+    }
     if (door == null && points / 2 == 5) {
         door = new component(50, 50, "/img/door.png", canvasWith, canvasHeight / 2, "image");
     }
@@ -160,17 +160,12 @@ function updateGameArea() {
         if (myGamePiece.passed(door)) {
             window.location.reload();
         }
-        door.speedX = -1;
+        door.speedX = -2;
         door.update();
         door.newPos();
     }
-    if (points / 2 == 1) {
-
-        console.log(points / 2)
-        // Add Door
-    }
     for (i = 0; i < myObstacles.length; i += 1) {
-        myObstacles[i].x += -1;
+        myObstacles[i].x += -2;
         myObstacles[i].update();
     }
     myGamePiece.newPos();
