@@ -114,8 +114,7 @@
 
                     <article id="dos">
                         <a href="#tres" class="puerta">puerta</a>
-                        <canvas id="canvas">
-                                                </canvas>
+                        <canvas id="canvas"></canvas>
                     
                         <button onclick="moveLeft()">Left</button>
                         <button onclick="moveRight()">Right</button>
@@ -124,8 +123,49 @@
                     </article>
             
                     <article id="tres">
-                        <a href="#cuatro" class="puerta">puerta</a>
-            
+                        <canvas id="canvatres"></canvas>
+                        <!-- modal si gano -->
+                        <div class="modal" id="gameWin" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title">GANASTEE!!</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <p style="color:#000;">Juntaste todas las monedas. Podes continuar en el proximo nivel</p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary"><a href="#cuatro" >Next Level</a></button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <!-- boton si pierdo -->
+                          <div class="modal" id="gameOver" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title">Trata otra vez</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <p style="color:#000;">Te faltaron juntar monedas. Segui intentando!</p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- boton siguiente nivel -->
+                        <a id="btn" href="#cuatro" class="puerta hidden">Next Level</a>
                     </article>
             
                     <article id="cuatro">
@@ -160,6 +200,7 @@
     <script src="script/menu.js"></script>
     <script src="script/plataforma.js"></script>
     <script src="script/canvasuno.js"></script>
+    <script src="script/canvastres.js"></script>
 
     <!-- BOOTSTRAP -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
