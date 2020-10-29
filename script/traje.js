@@ -5,7 +5,6 @@
 
 
 function cambiarOutfit(url, nave){
-
     playerSprite.src = url 
 }
 
