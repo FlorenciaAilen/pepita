@@ -36,7 +36,6 @@
 
 main{
     background-image: url("../img/espacio-con-estrellas-2899.jpg");
-
     background-repeat: no-repeat;
     height: 100vh;
     width: 100vw;
@@ -176,7 +175,7 @@ i:hover{
 #siguiente{
     position: absolute;
     top: 45vh;
-    right: 2px;
+    right: 2vw;
     border-radius: 10px;
     padding: 10px;
     background: lightskyblue;

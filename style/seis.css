@@ -1,0 +1,26 @@
+body {
+    width: 100vw;
+    margin: 0 ;
+    /* text-align: center; */
+}
+h1 {
+    text-align: center;
+}
+#canvaseis {
+    position: absolute;
+    margin-left: 15vw;
+    text-align: center;
+    border: groove 2px red;
+    /* background: black; */
+    box-shadow: 10px 10px 10px #888888;
+}
+#instruction{
+padding: 10px;
+font-family: 'Courier New', Courier, monospace;
+font-weight: bold;
+position: absolute;
+top: 80vh;
+left: 30vw;
+text-align: center;
+
+}
