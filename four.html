@@ -2,6 +2,10 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <title>Nivel 4</title>
+    <link rel="shortcut icon" href="img/pepita.png" type="image/x-icon">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
         canvas {
@@ -12,6 +16,7 @@
 </head>
 
 <body onload="startGame()">
+    <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">Jump</button>
     <script src="script/four.js"></script>
 </body>
 
