@@ -15,7 +15,6 @@ let canvas = document.getElementById("canvas");
 canvas.width =  window.innerWidth * 0.7;
 canvas.height= window.innerHeight * 0.8;
 
-canvas.style.background = "blue"
 canvas.style.backgroundImage = 'url("img/lab1/fondo.svg")';
 canvas.style.backgroundSize = 'cover';
 let ctx= canvas.getContext("2d")
@@ -70,6 +69,11 @@ let chocanPalancaLeft = false;
 let chocanPalancaUp = false;
 let chocanPalancaDown = false;
 
+let chocanJetpackRight = false;
+let chocanJetpackLeft = false;
+let chocanJetpackUp = false;
+let chocanJetpackDown = false;
+
 let colisionaRight = false;
 let colisionaLeft = false;
 let colisionaUp = false;
@@ -103,10 +107,10 @@ asteroideArray.push( new Asteroide ('img/lab1/fila.svg', canvas.width/1.6, 0, ca
 asteroideArray.push( new Asteroide ('img/lab1/filahoz.svg', canvas.width/2.25, canvas.height/2, canvas.width /5, canvas.height /18))
 asteroideArray.push( new Asteroide ('img/lab1/filapequeña.svg', canvas.width/2.3, canvas.height/2.9, canvas.width /26, canvas.height /6))
 asteroideArray.push( new Asteroide ('img/lab1/fila.svg', canvas.width/1.25, canvas.height- canvas.height/1.8, canvas.width /26, canvas.height /1.8))
-asteroideArray.push( new Asteroide ('img/lab1/base.svg', canvas.width/1.7, canvas.height/ 2.1, canvas.width /23, canvas.height /20))
+asteroideArray.push( new Asteroide ('img/lab1/base.svg', canvas.width/1.9, canvas.height/ 2.1, canvas.width /23, canvas.height /20))
 asteroideArray.push( new Asteroide ('img/lab1/nave.png', canvas.width/2.3, canvas.height- canvas.height/2.3, canvas.width /5, canvas.height /2.5))
 
-    
+
 
 console.log(asteroideArray)
 
@@ -122,29 +126,29 @@ function colisionaAsteroide(asteroideArray) {
         const astTop = asteroide.y;
         const astBottom = asteroide.y + asteroide.height;
 
-        if(  pepiTop <= astBottom && 
-            astRight + width / 1.4  > pepiRight && 
-            astLeft - width / 1.4 < pepiLeft && 
+        if(  pepiTop <= astBottom &&
+            astRight + width / 1.4  > pepiRight &&
+            astLeft - width / 1.4 < pepiLeft &&
             astTop <= pepiTop )
             {
             chocanUp = true;
         }
-        if(  pepiBottom >= astTop && 
-            astRight + width / 1.4  > pepiRight && 
-            astLeft - width / 1.4 < pepiLeft && 
+        if(  pepiBottom >= astTop &&
+            astRight + width / 1.4  > pepiRight &&
+            astLeft - width / 1.4 < pepiLeft &&
             astBottom >= pepiBottom)
             {
             chocanDown = true;
         }
-        if(pepiRight >= astLeft && 
-            astBottom + height / 1.4 > pepiBottom && 
+        if(pepiRight >= astLeft &&
+            astBottom + height / 1.4 > pepiBottom &&
             astTop - height / 1.4 < pepiTop &&
             astRight >= pepiRight)
             {
             chocanRight = true;
         }
-        if(pepiLeft <= astRight && 
-            astBottom + height / 1.4 > pepiBottom && 
+        if(pepiLeft <= astRight &&
+            astBottom + height / 1.4 > pepiBottom &&
             astTop - height / 1.4 < pepiTop &&
             astLeft <= pepiLeft)
             {
@@ -172,45 +176,85 @@ class Palanca {
 }
 }
 
-let palancaDerecha = new Palanca ('img/lab1/palanca1.svg', canvas.width/1.7, canvas.height/ 2.35, canvas.width /23, canvas.height /15);
-let palancaIzquierda =  new Palanca ('img/lab1/palanca2.svg', canvas.width/1.7, canvas.height/ 2.35, canvas.width /23, canvas.height /15);
+let palancaDerecha = new Palanca ('img/lab1/palanca1.svg', canvas.width/1.9, canvas.height/ 2.35, canvas.width /23, canvas.height /15);
+let palancaIzquierda =  new Palanca ('img/lab1/palanca2.svg', canvas.width/1.9, canvas.height/ 2.35, canvas.width /23, canvas.height /15);
 let nave = new Asteroide ('img/lab1/nave.png', canvas.width/2.3, canvas.height- canvas.height/2.3, canvas.width /5, canvas.height /2.5);
 let botton =  new Palanca('img/lab1/botton.svg', canvas.width/1.2, canvas.height- canvas.height/12, canvas.width /6, canvas.height /10)
+let jetpack =  new Palanca('img/lab1/jetpack1.svg', canvas.width/1.2, 0, canvas.width /6, canvas.height /5)
+let jetpackGuardado =  new Palanca('img/lab1/jetpack2.svg', canvas.width/1.2, 0, canvas.width /6, canvas.height /5)
 
 function colisionaPalanca(palanca) {
     const pepiLeft = x;
     const pepiRight = x + width;
     const pepiTop = y;
     const pepiBottom = y + height;
-    
+
     const palancaLeft = palanca.x;
     const palancaRight = palanca.x + palanca.width;
     const palancaTop = palanca.y;
     const palancaBottom = palanca.y + palanca.height;
-   
-    if(  pepiTop <= palancaBottom && 
-         palancaRight + width / 1.2  > pepiRight && 
-         palancaLeft - width / 1.2 < pepiLeft && 
+
+    if(  pepiTop <= palancaBottom &&
+         palancaRight + width / 1.2  > pepiRight &&
+         palancaLeft - width / 1.2 < pepiLeft &&
          palancaTop <= pepiTop ){
          chocanPalancaUp = true;
     }
-    if(  pepiBottom >= palancaTop && 
-         palancaRight + width / 1.2  > pepiRight && 
-         palancaLeft - width / 1.2 < pepiLeft && 
+    if(  pepiBottom >= palancaTop &&
+         palancaRight + width / 1.2  > pepiRight &&
+         palancaLeft - width / 1.2 < pepiLeft &&
          palancaBottom >= pepiBottom){
          chocanPalancaDown = true;
     }
-    if(pepiRight >= palancaLeft && 
-         palancaBottom + height / 1.2 > pepiBottom && 
+    if(pepiRight >= palancaLeft &&
+         palancaBottom + height / 1.2 > pepiBottom &&
          palancaTop - height / 1.2 < pepiTop &&
          palancaRight >= pepiRight){
          chocanPalancaRight = true;
     }
-    if(pepiLeft <= palancaRight && 
-         palancaBottom + height / 1.2 > pepiBottom && 
+    if(pepiLeft <= palancaRight &&
+         palancaBottom + height / 1.2 > pepiBottom &&
          palancaTop - height / 1.2 < pepiTop &&
          palancaLeft <= pepiLeft){
         chocanPalancaLeft = true;
+    }
+}
+
+
+function colisionaJetpack(jetpack) {
+    const pepiLeft = x;
+    const pepiRight = x + width;
+    const pepiTop = y;
+    const pepiBottom = y + height;
+
+    const jetpackLeft = jetpack.x;
+    const jetpackRight = jetpack.x + jetpack.width;
+    const jetpackTop = jetpack.y;
+    const jetpackBottom = jetpack.y + jetpack.height;
+
+    if(  pepiTop <= jetpackBottom &&
+         jetpackRight + width / 1.2  > pepiRight &&
+         jetpackLeft - width / 1.2 < pepiLeft &&
+         jetpackTop <= pepiTop ){
+         chocanJetpackUp = true;
+    }
+    if(  pepiBottom >= jetpackTop &&
+         jetpackRight + width / 1.2  > pepiRight &&
+         jetpackLeft - width / 1.2 < pepiLeft &&
+         jetpackBottom >= pepiBottom){
+         chocanJetpackDown = true;
+    }
+    if(pepiRight >= jetpackLeft &&
+         jetpackBottom + height / 1.2 > pepiBottom &&
+         jetpackTop - height / 1.2 < pepiTop &&
+         jetpackRight >= pepiRight){
+         chocanJetpackRight = true;
+    }
+    if(pepiLeft <= jetpackRight &&
+         jetpackBottom + height / 1.2 > pepiBottom &&
+         jetpackTop - height / 1.2 < pepiTop &&
+         jetpackLeft <= pepiLeft){
+        chocanJetpackLeft = true;
     }
 }
 // y cuando estan en true es que no se pueden mover
@@ -234,16 +278,24 @@ function colisiona() {
 //LUEGO LE DA VALORES DEPENDIENDO PARA DONDE MOVER, DESPUES SE MUEVE TANTA CANTIDAD DE PIXELES
 function moveRight(){
 
-    colisionaPalanca(palancaDerecha) 
+    colisionaPalanca(palancaDerecha);
     if(!chocanPalancaRight)
     {
-        console.log(chocanPalancaRight)
+        // console.log(chocanObjetoRight)
     }
-   
+    colisionaJetpack(jetpack)
+    if(!chocanJetpackRight)
+    {
+        console.log( "derecha "+chocanJetpackRight)
+    } else{
+        console.log( "derecha "+chocanJetpackRight)
+
+    }
+
    colisionaAsteroide(asteroideArray);
     if(!chocanRight){
      colisiona();
-    
+
      ctx.clearRect(x, y, width, height);
      left = false;
      up = false;
@@ -256,18 +308,24 @@ function moveRight(){
         colisionaUp = false;
         colisionaLeft = false;
         }
-    } 
-    chocanRight= false  
+    }
+    chocanRight= false
 }
 
 function moveLeft(){
 
-    colisionaPalanca(palancaDerecha) 
+    colisionaPalanca(palancaDerecha)
     if(!chocanPalancaLeft)
     {
         console.log('toqué por derecha de palanca')
     }
-   
+
+    colisionaJetpack(jetpack)
+    if(!chocanJetpackLeft)
+    {
+        // console.log('toqué por derecha de palanca')
+    }
+
    colisionaAsteroide(asteroideArray);
    if(!chocanLeft){
      colisiona();
@@ -276,7 +334,7 @@ function moveLeft(){
      left = true;
      up = false;
      down = false;
-     
+
       // esto revisa si la colision es falsa y si lo es habilita el movimiento
      if (!colisionaLeft) {
          x-=velocidad;
@@ -284,19 +342,25 @@ function moveLeft(){
          colisionaUp = false;
          colisionaDown = false;
      }
-    } 
+    }
     chocanLeft = false
 }
 
 function moveDown(){
 
-    colisionaPalanca(palancaDerecha) 
+    colisionaPalanca(palancaDerecha)
     if(!chocanPalancaDown)
     {
         console.log(chocanPalancaDown)
-    
+
     }
-    
+
+    colisionaJetpack(jetpack)
+    if(!chocanJetpackDown)
+    {
+        console.log(chocanJetpackDown)
+
+    }
    colisionaAsteroide(asteroideArray);
     if(!chocanDown){
      colisiona();
@@ -304,7 +368,7 @@ function moveDown(){
      ctx.clearRect(x, y, width, height);
      up = false;
      left= false;
-     down = true; 
+     down = true;
      // esto revisa si la colision es falsa y si lo es habilita el movimiento
 
       if (!colisionaDown) {
@@ -313,21 +377,27 @@ function moveDown(){
         colisionaUp = false;
         colisionaLeft = false;
       }
-    } 
+    }
     chocanDown=false;
 }
 function moveUp(){
-   
-    colisionaPalanca(palancaDerecha) 
+
+    colisionaPalanca(palancaDerecha)
     if(chocanPalancaUp)
     {
         console.log('toqué por debajo de palanca')
     }
-   
+
+    colisionaJetpack(jetpack)
+    if(chocanJetpackUp)
+    {
+        console.log('toqué por debajo de palanca')
+    }
+
     colisionaAsteroide(asteroideArray);
     if(!chocanUp){
      colisiona();
-    
+
      ctx.clearRect(x, y, width, height);
      up= true;
      left = false;
@@ -340,7 +410,7 @@ function moveUp(){
        colisionaDown = false;
        colisionaLeft = false;
       }
-    } 
+    }
     chocanUp = false;
 
 }
@@ -351,8 +421,11 @@ function updateFrame(){
 
     ctx.clearRect(x, y, width, height);
     //borra el espacio de la palanca y nave
-    ctx.clearRect(canvas.width/1.7, canvas.height/ 2.35, canvas.width /23, canvas.height /15)
+    ctx.clearRect(canvas.width/1.9, canvas.height/ 2.35, canvas.width /23, canvas.height /15)
     ctx.clearRect(canvas.width/2.3, canvas.height- canvas.height/2.3, canvas.width /5, canvas.height /2)
+
+    ctx.clearRect(canvas.width/1.2, 0, canvas.width /6, canvas.height /5)
+
     currentFrame = ++currentFrame % cols;
     srcX = currentFrame * width;
 
@@ -371,7 +444,7 @@ function updateFrame(){
     if(up == false & left == false & down == true){
     srcY = trackUp * height;
         }
-       
+
 
 }
 
@@ -384,7 +457,7 @@ function drawImage(){
 
 //DIBUJA EL CANVAS CADA TANTOS INTERVALOS
 setInterval(function(){
-   
+
     //dibuja a pepita cada vez que se actualiza
     drawImage();
     botton.draw();
@@ -393,21 +466,34 @@ setInterval(function(){
     ast.draw()}
     )
     //revisa si toqué la palanca para saber qué palanca dibujar y mover la nave
-    if(!chocanPalancaDown){
-    palancaDerecha.draw() 
-    nave.draw()} 
+    if(!chocanPalancaDown ){
+    palancaDerecha.draw()
+    nave.draw()}
     else{
     palancaIzquierda.draw()
     moverNave(5);
     }
+
+    if(!chocanJetpackUp){
+        jetpack.draw()
+    } else{
+        jetpackGuardado.draw()
+    }
+    if(!chocanJetpackRight){
+        jetpack.draw()
+    } else{
+        jetpackGuardado.draw()
+    }
+
     //al llegar al boton del final aparece el boton de siguiente nivel
     finalNivel();
+
 
 }, 30);
 
 
 function moverNave(num){
-    asteroideArray[7].y += num; 
+    asteroideArray[7].y += num;
 }
 
 //llAMO A LOS BOTONES DE LAS FLECHAS
@@ -416,7 +502,7 @@ let abajo =document.querySelector("#abajo i")
 let derecha =document.querySelector("#derecha i")
 let izquierda =document.querySelector("#izquierda i")
 
-//CUANDO DEJO DE PRESIONAR LA TECLA LOS COLORES Y EL BORDE VUELVEN A SU ESTADO ORIGINAL 
+//CUANDO DEJO DE PRESIONAR LA TECLA LOS COLORES Y EL BORDE VUELVEN A SU ESTADO ORIGINAL
 document.addEventListener("keyup",(e)=>{
 
 arriba.style.color= "rgb(74, 255, 246)";
@@ -478,7 +564,7 @@ default:
 
 function finalNivel() {
     if(x + width >=  canvas.width/1.2 && y + height >= canvas.height- canvas.height/12) {
-      
+
         console.log("final")
         let button = document.getElementById('siguiente')
         button.classList.remove('hidden')
