@@ -5,9 +5,17 @@
     <meta charset="UTF-8">
     <title>Nivel 4</title>
     <link rel="shortcut icon" href="img/pepita.png" type="image/x-icon">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+        body {
+            background-image: url("img/background3.jpg");
+        }
+
         canvas {
             border: 1px solid #d3d3d3;
             background-color: #f1f1f1;
@@ -15,8 +23,31 @@
     </style>
 </head>
 
+
 <body onload="startGame()">
-    <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">Jump</button>
+    <div class="container">
+        <div class="row">
+            <div id="instrucciones">
+                <p> Estas muy cerca! Ayuda a Pepita a esquivar los obstaculos. Puedes presionar la barra espaciadora o la flecha hacia arriba. </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div style="margin-top: 25vh" class="uno">
+                    <button class="flechas" id="arriba" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)"><i
+                            class="fas fa-arrow-circle-up"></i></button>
+                </div>
+            </div>
+
+            <div class="col">
+                <div id="game"></div>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+    <button>Jump</button>
     <script src="script/four.js"></script>
 </body>
 

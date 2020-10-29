@@ -7,10 +7,6 @@ var door = null;
 const canvasWith = window.innerWidth * 0.7;
 const canvasHeight = window.innerHeight * 0.8;
 
-let howtoplay;
-let howtoplay2;
-let howtoplaybox;
-
 let points = 0;
 
 
@@ -33,10 +29,7 @@ function startGame() {
         }
     });
 
-    howtoplaybox = new component(150, 75, "white", canvasWith - 150, canvasHeight - 75)
-
-    howtoplay2 = new component(15, 15, "How To Play:", canvasWith - 125, canvasHeight - 45, "text")
-    howtoplay = new component(15, 15, "Space = Jump", canvasWith - 125, canvasHeight - 20, "text")
+    
     myGameArea.start();
 }
 
@@ -46,7 +39,7 @@ var myGameArea = {
         this.canvas.width = canvasWith;
         this.canvas.height = canvasHeight;
         this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        document.getElementById("game").append(this.canvas)
         this.frameNo = 0;
         this.interval = setInterval(updateGameArea, 20);
     },
@@ -179,10 +172,6 @@ function updateGameArea() {
     }
     myGamePiece.newPos();
     myGamePiece.update();
-    howtoplaybox.update();
-    howtoplay.update();
-    howtoplay2.update();
-
 }
 
 function everyinterval(n) {
