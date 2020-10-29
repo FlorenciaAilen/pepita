@@ -54,6 +54,8 @@ function drawMap(e){
 // PEPITA
 // const playerSprite = new Image()
 // playerSprite.src = "../img/character2.png"
+const playerSprite = new Image()
+playerSprite.src = "img/character2.png"
 
 function drawPlayer(x,y){
     ctx3.drawImage(playerSprite,player.width * player.frameX,player.height * player.frameY,player.width,player.height,player.x,player.y,player.width2,player.height2)         
@@ -221,19 +223,19 @@ function collision(enemy){
 }
 
 const enemyOne = new Image()
-enemyOne.src = "../img/enemy1.png"
+enemyOne.src = "img/enemy1.png"
 
 const enemyTwo = new Image()
-enemyTwo.src = "../img/enemy2.png"
+enemyTwo.src = "img/enemy2.png"
 
 const enemyThree = new Image()
-enemyThree.src = "../img/enemy3.png"
+enemyThree.src = "img/enemy3.png"
 
 const enemyFour = new Image()
-enemyFour.src = "../img/enemy4.png"
+enemyFour.src = "img/enemy4.png"
 
 const enemyFive = new Image()
-enemyFive.src = "../img/enemy5.png"
+enemyFive.src = "img/enemy5.png"
 
 const enemigoA = {
     id: enemyOne,
@@ -458,7 +460,7 @@ class Coin {
       }
       this.draw = function () {
         const coinImg = new Image();
-        coinImg.src = '../img/coin1.png'
+        coinImg.src = 'img/coin1.png'
         ctx3.drawImage(coinImg,this.x,this.y,this.width,this.height)
         }   
     }
