@@ -3,232 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La venganza de Pepita</title>
+    <link rel="stylesheet" href="style/prologo.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="style/main.css">
-   
-   <!-- FAVICON -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <title>La venganza de Pepita</title>
     <link rel="shortcut icon" href="img/pepita.png" type="image/x-icon">
-    <!-- LINK DE FONT AWESOME -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
 </head>
-<body class="d-flex flex-column justify-content-between" >
-    <main>
-  
-        <div id="game" >
-           <!--Menu del juego-->
-            <div id="main" class="frame visible d-flex justify-content-center flex-column">
-
-                <div>
-                    <img id="titulo" src="img/titulo2.gif" alt="">
-                </div>
-
-                <!--Logo Code Queen-->
-                <div class="d-flex flex-row justify-content-center ">
-                    <p class="m-3">By</p>
-                <!-- Button trigger modal -->
-                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                     <img id="logoCodeQueens" src="img/logo_code_queens.png" alt="logo_code_queens">
-                   </button>
-                   
-                   <!-- Modal -->
-                   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                     <div class="modal-dialog modal-xl">
-                       <div class="modal-content">
-                         <div class="modal-header">
-                           <h5 class="modal-title" id="exampleModalLabel">Integrantes de Code Queens</h5>
-                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                             <span aria-hidden="true">&times;</span>
-                           </button>
-                         </div>
-                         <div class="modal-body">
-                          <div class="row justify-content-around ">
-                            <div class="card-modal col3 h-25 w-25 m-2">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="img/modal/belen.jpeg" class="card-img-top h-50" alt="Foto Belen">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Belén Funes</h5>
-                                      <p class="card-text"></p>
-                                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                  </div>
-                            </div>
-                            <div class="card-modal col3 h-25 w-25 m-2">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="img/modal/andrea.jpg" class="card-img-top h-50" alt="foto Andrea">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Andrea Briceño</h5>
-                                      <p class="card-text"></p>
-                                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                  </div>
-                            </div>
-                            <div class="card-modal col3 h-25 w-25 m-2">
-                      
-                                    <div class="card" style="width: 18rem;">
-                                        <img src="img/modal/nadine.jpg" class="card-img-top h-50" alt="foto Nadine">
-                                        <div class="card-body">
-                                          <h5 class="card-title">Nadine Kamiya</h5>
-                                          <p class="card-text"></p>
-                                          <a href="#" class="btn btn-primary">Go somewhere</a>
-                                        </div>
-                                      </div>
-                         
-                            </div>
-                          </div>
-                          <div class="row justify-content-center ">
-                            <div class="card-modal col3 h-25 w-25 m-2">
-                               
-                                    <div class="card" style="width: 18rem;">
-                                        <img src="img/modal/janneth.png" class="card-img-top" alt="foto Janneth">
-                                        <div class="card-body">
-                                          <h5 class="card-title">Janneth Chura</h5>
-                                          <p class="card-text"></p>
-                                          <a href="#" class="btn btn-primary">Go somewhere</a>
-                                        </div>
-                                      </div>
-                               
-                            </div>
-                            <div class="card-modal col3 h-25 w-25 m-2">
-                              
-                                    <div class="card" style="width: 18rem;">
-                                        <img src="img/modal/flor.jpeg" class="card-img-top" alt="foto Flor">
-                                        <div class="card-body">
-                                          <h5 class="card-title">Florencia Mordcovici</h5>
-                                          <p class="card-text"></p>
-                                          <a href="#" class="btn btn-primary">Go somewhere</a>
-                                        </div>
-                                      </div>
-                              
-                            </div>
-                            <div class="card-modal col3 h-25 w-25 m-2">
-                               
-                                    <div class="card" style="width: 18rem;">
-                                        <img src="img/modal/luana.jpeg" class="card-img-top" alt="foto Luana">
-                                        <div class="card-body">
-                                          <h5 class="card-title">Luana Brandan</h5>
-                                          <p class="card-text"></p>
-                                          <a href="#" class="btn btn-primary">Go somewhere</a>
-                                        </div>
-                                      </div>
-                              
-                            </div>    
-                          </div>
-
-
-
-
-
-
-
-                         </div>
-                         <div class="modal-footer">
-                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                           
-                         </div>
-                       </div>
-                     </div>
-                   </div>
-                </div>
-
-                <div class="d-flex flex-row">
-                    <!-- Imagen Pepita -->
-                    <div id="pepita-menu">
-                        <img id="img-pepita" src="img/pepita.png" alt="">
-                    </div>
-    
-                    <div>
-
-                        <!-- Button Play game -->
-                        <button class="main-button"  onclick="game.setFrameVisible('canva'); game.setFrameHidden('main');">Comenzar</button>
-                    
-                        <!-- Button Info -->
-                        <button class="main-button"  type="button"  data-toggle="modal" data-target="#exampleModal">
-                            Info
-                        </button>
-                        <!-- Button Rules -->
-                        <button class="main-button" type="button" data-toggle="modal" data-target="#exampleModal2">
-                            Reglas
-                        </button>
-                        
-                        <!-- Modal info -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Info</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    </div>
-                                    <div class="modal-body">
-                                    ...
-                                    </div>
-                                
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Modal Rules -->
-                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">How to Play</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    </div>
-                                    <div class="modal-body">
-                                    ...
-                                    </div>
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>                    
-                </div>
-            </div>
-        
-            <!-- CANVAS -->
-            <div id="canva" class="frame hidden grilla">
-               
-                   <div id="instrucciones">
-                      <p>  La primera travesía de Pepita será identificar cómo quitar la nave de su camino  
-                          para llegar al botón morado </p>
-                </div>
-
-                <canvas id="canvas" class="canvas"></canvas>
-
-                <div class="container-flechas">
-                 <div class="uno">
-                     <button class="flechas" id="arriba" onclick="moveUp()"><i class="fas fa-arrow-circle-up"></i></button>
-                 </div>
-                 <div class="dos"> 
-                     <button class="flechas" id="izquierda" onclick="moveLeft()"><i class="fas fa-arrow-circle-left"></i></button>
-                     <button class="flechas" id="derecha" onclick="moveRight()"><i class="fas fa-arrow-circle-right"></i></button>
-                 </div>
-                     <div class="tres"><button id="abajo" class="flechas" onclick="moveDown()"><i class="fas fa-arrow-circle-down"></i></button>
-                 </div>
-                </div>
-                <button id="siguiente"  class="hidden" href="index2.html"> Siguiente<br>nivel</button>
-               
-               
-            
-            </div>
+<body id="body2">
+    <div id="container">
+<div id="credits">
+    <div id="headings">
+        <h1 class="display-3">Episode II</h1>
+        <h2 class="display-1">LA VENGANZA DE </h2>
+        <h2 class="display-1">PEPITA</h2>
+        <div>
+            <p>Pepito se perdió en una galaxia muy lejana... UN MOMENTO</p>
+            <p>¿Se perdió o lo raptaron?</p>
+            <p>Pepito tenía información muy valiosa sobre seres muy malvados</p>
+            <p>Lo capturaron y no sabemos que le puede llegar a pasar!</p>
+            <p>Pepita, su hermana, sale en su búsqueda esperando que no sea demasiado tarde...</p>
         </div>
-    </main>
-
-
-    <script src="script/menu.js"></script>
-    <script src="script/nivel1.js"></script>
+    </div>
     
-
-
-    
-    <!-- BOOTSTRAP -->
+</div>
+<button id="button"><a href="menu.html">PLAY</a></button>
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
+
 </html>

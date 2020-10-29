@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivel 3</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/pepita.png" type="image/x-icon">
+    
+    <style>
+      body{
+        background-image: url("img/background3.jpg");
+      }
+
+      .hidden{
+        display: none;
+      }
+
+      *{
+        margin: 0;
+        padding: 0;
+      }
+
+      #leyenda,#btn{
+        text-align: center;
+        width: 900px;
+  
+      }
+
+
+      .three{
+        margin-left: 15vw;
+      }
+
+      #box-a{
+        margin-left: 25vw;
+        width: 20vw; 
+        height:5vh;
+      }
+
+      a,a:hover{
+        text-decoration: none;
+        color: white;
+      }
+    
+    </style>
+  </head>
+<body>
+      <div class="d-flex flex-column justify-content-center aling-items-end three">
+        <!-- <button onclick="cambiarOutfit('../img/character2.png')">amarillo</button>
+        <button id="rojo" onclick="cambiarOutfit('../img/pepita_wonder_woman.png')">Rojo</button> -->
+      <div><div id="leyenda" class="bg-danger text-white ">LLEGÁ HASTA EL FONDO DEL LABERINTO <br> CUIDADO!! NO TE PUEDEN ATRAPAR LOS ENEMIGOS</div></div>
+      <div>
+        <canvas id="canvatres"></canvas>
+      </div>
+        <!-- modal si gano -->
+         <div class="modal" id="gameWin" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">GANASTEE!!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p style="color:#000;">Juntaste todas las monedas. Podes continuar en el proximo nivel</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn bg-danger"><a style="color:white;" href="four.html" >Next Level</a></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- boton si pierdo -->
+           <div class="modal" id="gameOver" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Trata otra vez</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p style="color:#000;">Te faltaron juntar monedas. Segui intentando!</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- boton siguiente nivel -->
+          <div id="box-a" class="text-white rounded-pill d-flex justify-content-center aling-items-center hidden ">
+         <a id="btn" href="four.html" class="puerta hidden">Next Level</a>
+        </div>
+      </div>
+
+      <script src="script/traje.js"></script>
+    <script src="script/canvastres.js"></script>
+    <!-- BOOTSTRAP -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
