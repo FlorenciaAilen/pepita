@@ -23,7 +23,7 @@ let map = [ [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
             [1,0,1,0,1,1,0,0,1,0,1,0,1,0,1,0,0,1],
             [1,0,1,0,0,1,0,1,1,1,1,0,1,0,1,0,1,1],
             [1,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1],
-            [1,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]];
+            [1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]];
 
 // guardando la ubicacion de todo            
 let collBox = [];
@@ -52,8 +52,10 @@ function drawMap(e){
 }
 
 // PEPITA
+// const playerSprite = new Image()
+// playerSprite.src = "../img/character2.png"
 const playerSprite = new Image()
-playerSprite.src = "../img/character2.png"
+playerSprite.src = "img/character2.png"
 
 function drawPlayer(x,y){
     ctx3.drawImage(playerSprite,player.width * player.frameX,player.height * player.frameY,player.width,player.height,player.x,player.y,player.width2,player.height2)         
@@ -97,6 +99,7 @@ function checkColl(){
                         console.log('win')
                         move(player.newX,player.newY)
                         document.getElementById('btn').classList.remove('hidden')
+                        document.getElementById('box-a').classList.add('bg-danger')
                         $('#gameWin').modal('show')
                     }else{
                        
@@ -214,24 +217,25 @@ function collision(enemy){
             for(let i = 0 ; i < coinsCollect.length ; i++){
                 coins.push(coinsCollect[i])
             }
+            coinsCollect = []
         };
     };
 }
 
 const enemyOne = new Image()
-enemyOne.src = "../img/enemy1.png"
+enemyOne.src = "img/enemy1.png"
 
 const enemyTwo = new Image()
-enemyTwo.src = "../img/enemy2.png"
+enemyTwo.src = "img/enemy2.png"
 
 const enemyThree = new Image()
-enemyThree.src = "../img/enemy3.png"
+enemyThree.src = "img/enemy3.png"
 
 const enemyFour = new Image()
-enemyFour.src = "../img/enemy4.png"
+enemyFour.src = "img/enemy4.png"
 
 const enemyFive = new Image()
-enemyFive.src = "../img/enemy5.png"
+enemyFive.src = "img/enemy5.png"
 
 const enemigoA = {
     id: enemyOne,
@@ -456,7 +460,7 @@ class Coin {
       }
       this.draw = function () {
         const coinImg = new Image();
-        coinImg.src = '../img/coin1.png'
+        coinImg.src = 'img/coin1.png'
         ctx3.drawImage(coinImg,this.x,this.y,this.width,this.height)
         }   
     }
@@ -498,34 +502,3 @@ coins.push(new Coin(215,375))
 coins.push(new Coin(165,325))
 coins.push(new Coin(165,165))
 coins.push(new Coin(225,165))
-//const enemyOne = new Image()
-//enemyOne.src = "../img/enemy1.png"
-
-// let cantDiamonds = {
-//     x: [50
-
-//      ],
-    
-//       y: [100,
-//   ]
-// };
-
-// function drawDiamonds(){
-
-// diamond = new Image();
-// diamond.src = '../img/diamante2.png';
-
-
-// diamond.onload = function(){
-//     for (let i = 0; i < cantDiamonds.x.length; i++) {
-//       ctx3.drawImage(diamond, cantDiamonds.x[i], cantDiamonds.y[i], 50, 50);
-        
-//     }
-   
-//  }
-
-
-
-// }
-
-
