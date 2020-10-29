@@ -7,7 +7,6 @@ var door = null;
 const canvasWith = window.innerWidth * 0.7;
 const canvasHeight = window.innerHeight * 0.8;
 
-
 let points = 0;
 
 
@@ -28,7 +27,9 @@ function startGame() {
             e.preventDefault();
             accelerate(0.05);
         }
-    })
+    });
+
+    
     myGameArea.start();
 }
 
@@ -38,18 +39,19 @@ var myGameArea = {
         this.canvas.width = canvasWith;
         this.canvas.height = canvasHeight;
         this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        document.getElementById("game").append(this.canvas)
         this.frameNo = 0;
         this.interval = setInterval(updateGameArea, 20);
     },
     clear: function () {
-        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.context.clearRect(0, 0, canvasHeight, this.canvas.height);
     }
 }
 
 function component(width, height, color, x, y, type) {
     this.type = type;
     this.score = 0;
+    this.text = color;
     this.width = width;
     this.height = height;
     this.speedX = 0;
@@ -62,8 +64,8 @@ function component(width, height, color, x, y, type) {
     this.update = function () {
         ctx = myGameArea.context;
         if (this.type == "text") {
-            ctx.font = this.width + " " + this.height;
-            ctx.fillStyle = color;
+            ctx.font = this.width + "px Arial";
+            ctx.fillStyle = "black"
             ctx.fillText(this.text, this.x, this.y);
         } else if (this.type == "image") {
             const image = new Image();
@@ -151,7 +153,7 @@ function updateGameArea() {
         myObstacles.push(new component(20, x - height - gap, "img/obstacle.png", x, height + gap, "image"));
     }
     if (door == null && points / 2 == 5) {
-        door = new component(50, 50, "/img/door.png", canvasWith, canvasHeight / 2, "image");
+        door = new component(115 / 2, 148 / 2, "/img/door.png", canvasWith, canvasHeight / 4, "image");
     }
     if (door != null) {
         if (myGamePiece.crashWith(door)) {

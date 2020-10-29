@@ -50,8 +50,19 @@ let height = sheetHeight / rows;
 let currentFrame = 0;
 
 //SE DIBUJA A PEPITA
+//let character = new Image()
+//character.src = "img/character.png";
+
+
+let url
+function obteneroutfit(){
+     url = localStorage.getItem("url")
+}
+
+obteneroutfit()
 let character = new Image()
-character.src = "img/character.png";
+character.src = url;
+
 
 let velocidad = 20;
 

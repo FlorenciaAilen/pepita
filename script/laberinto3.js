@@ -20,8 +20,16 @@ canvas.style.backgroundSize = 'cover';
 let ctx= canvas.getContext("2d")
 
 //CREO A PEPITA
+
+
+let url
+function obteneroutfit(){
+     url = localStorage.getItem("url")
+}
+
+obteneroutfit()
 let characterSprite = new Image()
-characterSprite.src = "img/pepitatraje/pepitaorigin.png";
+characterSprite.src = url;
 
 let character = {
     x:0,
