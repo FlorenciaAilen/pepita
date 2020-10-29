@@ -1,10 +1,13 @@
 // const playerSprite = new Image()
 // playerSprite.src = "../img/character2.png"
-// const playerSprite = new Image()
+playerSprite = new Image()
 // playerSprite.src = "img/character2.png"
 
 
-function cambiarOutfit(url, nave){
+function cambiarOutfit(url){
+
     playerSprite.src = url 
+    localStorage.setItem("url", url)
 }
+
 
