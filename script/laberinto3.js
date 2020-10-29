@@ -21,7 +21,7 @@ let ctx= canvas.getContext("2d")
 
 //CREO A PEPITA
 let characterSprite = new Image()
-characterSprite.src = "img/pepitaorigin.png";
+characterSprite.src = "img/pepitatraje/pepitaorigin.png";
 
 let character = {
     x:0,
