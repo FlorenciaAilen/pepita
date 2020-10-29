@@ -1,8 +1,5 @@
-// const playerSprite = new Image()
-// playerSprite.src = "../img/character2.png"
-playerSprite = new Image()
-// playerSprite.src = "img/character2.png"
 
+playerSprite = new Image()
 
 function cambiarOutfit(url){
 
