@@ -21,7 +21,7 @@
                 <!--Logo Code Queen-->
                 <div class="d-flex flex-row justify-content-center ">
                     <p class="m-3">By</p>
-                    <a class="w-10" onclick="modal()" href="#myModal"><img id="logoCodeQueens" src="img/logo_code_queens.png" alt="logo_code_queens"></a>
+                    <a class="w-10"  href="#modalQueen"><img id="logoCodeQueens" src="img/logo_code_queens.png" alt="logo_code_queens"></a>
                 </div>
 
                 <div class="d-flex flex-row">
@@ -94,25 +94,23 @@
 
 
             <!-- GRILLA Y CANVAS -->
-            <div id="canva" class="frame hidden grilla">
+            <div id="canva" class="frame hidden">
             
-                
-                <div class="container">
+        
 
 
 
-
-                    <article id="uno">
+                    <!-- <article id="uno">
 
                         <canvas id="canvasUno"></canvas>
                         
-                        <a href="#dos" class="puerta">puerta</a>
+                        <a href="three.html" class="puerta">puerta</a>
             
-                    </article>
+                    </article> -->
 
 
 
-                    <article id="dos">
+                    <!-- <article id="dos">
                         <a href="#tres" class="puerta">puerta</a>
                         <canvas id="canvas"></canvas>
                     
@@ -125,7 +123,7 @@
                     <article id="tres">
                         <canvas id="canvatres"></canvas>
                         <!-- modal si gano -->
-                        <div class="modal" id="gameWin" tabindex="-1" aria-hidden="true">
+                        <!-- <div class="modal" id="gameWin" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog">
                               <div class="modal-content">
                                 <div class="modal-header">
@@ -146,7 +144,7 @@
                           </div>
                           
                           <!-- boton si pierdo -->
-                          <div class="modal" id="gameOver" tabindex="-1" aria-hidden="true">
+                          <!-- <div class="modal" id="gameOver" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog">
                               <div class="modal-content">
                                 <div class="modal-header">
@@ -165,7 +163,7 @@
                             </div>
                           </div>
                           <!-- boton siguiente nivel -->
-                        <a id="btn" href="#cuatro" class="puerta hidden">Next Level</a>
+                        <!-- <a id="btn" href="#cuatro" class="puerta hidden">Next Level</a>
                     </article>
             
                     <article id="cuatro">
@@ -184,23 +182,21 @@
                         <button onclick="game.setFrameVisible('main'); game.setFrameHidden('canva');">
                             Back to Menu
                         </button>
-                    </article>
-                </div>
+                    </article> --> 
+            </div>
 
-                <canvas></canvas>
+             
 
 
                
-            
-            </div>
+     
         </div>
     </main>
 
 
     <script src="script/menu.js"></script>
-    <script src="script/plataforma.js"></script>
     <script src="script/canvasuno.js"></script>
-    <script src="script/canvastres.js"></script>
+
 
     <!-- BOOTSTRAP -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
