@@ -259,12 +259,12 @@ border:none  !important ;
 .btn-primary:hover{
   background:   none  !important
 }
-.modal i{
+.link-modal{
     color: rgb(131, 5, 180);
     font-size: 3rem;
     border: none
 }
-.modal i:hover{
+.link-modal:hover{
     color: rgb(76, 17, 99)!important;
     border: none;
 }
