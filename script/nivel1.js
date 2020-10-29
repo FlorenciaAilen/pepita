@@ -39,11 +39,14 @@ let srcX;
 let srcY;
 
 //TAMAÑO DEL TOTAL DEL LIENZO DE PEPITA
+// let sheetWidth = 709;
+// let sheetHeight= 407;
+
 let sheetWidth = 709;
-let sheetHeight= 407;
+let sheetHeight= 610;
 
 let cols = 8;
-let rows = 4;
+let rows = 6;
 
 let width = sheetWidth / cols;
 let height = sheetHeight / rows;
@@ -51,8 +54,9 @@ let height = sheetHeight / rows;
 let currentFrame = 0;
 
 //SE DIBUJA A PEPITA
-let character = new Image()
-character.src = "img/character.png";
+ let character = new Image()
+ character.src = "img/character.png";
+
 
 let velocidad = 20;
 
