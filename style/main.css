@@ -233,8 +233,8 @@ text-align: center;
     flex-direction: column;
 }
 .nivel-1{
-    background-image: url("https://www.elfinanciero.com.mx/uploads/2020/07/14/84fec9a8e41594738971_standard_desktop_medium_retina.webp");
-
+    background-image: url("../img/lab1/uno.jpg");
+    background-size: cover;
 }
 /*----------------------------modal-----------------------------*/
 .modal-content{
