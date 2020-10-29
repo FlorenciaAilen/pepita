@@ -20,8 +20,8 @@ canvas.style.backgroundSize = 'cover';
 let ctx= canvas.getContext("2d")
 
 //CREO A PEPITA
-var characterSprite = new Image()
-characterSprite.src = "img/pepitaOrigin.png";
+let characterSprite = new Image()
+characterSprite.src = "img/pepitaorigin.png";
 
 let character = {
     x:0,
