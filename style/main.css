@@ -36,6 +36,7 @@
 
 main{
     background-image: url("../img/espacio-con-estrellas-2899.jpg");
+    background-size :'cover';
     background-repeat: no-repeat;
     height: 100vh;
     width: 100vw;
@@ -172,41 +173,59 @@ i:hover{
 }
 
 
-#siguiente{
+.siguiente{
     position: absolute;
     top: 45vh;
-    right: 2vw;
+    right: 1vw;
     border-radius: 10px;
     padding: 10px;
     background: lightskyblue;
     border-width: 5px;
+    width: 13.5vw;
+    text-align: center;
 }
-#siguiente:hover{
+.siguiente:hover{
     background-color: white;
+}
+.siguiente a{
+    width: 100%;
+    height: 100%; 
+   color: black!important;
+   text-decoration: none!important; 
+   font-family: 'Press Start 2P', cursive !important;
+
+   
 }
 /* -----------------INSTRUCCIONES-------------------------- */
 #instrucciones{
 color: white;
 width: 80vw;
 margin: 0 auto;
+margin-top: 10px;
 margin-bottom: 1rem;
 border: 2px solid black ;
 background-color: brown;
 border-radius: 10px;
-padding: 10px;
+padding: 15px;
+text-align: center;
 }
 #instrucciones p{
     font-size: 1rem;
     margin: 0!important;
+    
 }
 
 /* ----------------------------canvas 1 ----------------------------*/
 
-#canva{
+.canvas1{
     display: flex ;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.nivel-1{
+    background-image: url("https://www.elfinanciero.com.mx/uploads/2020/07/14/84fec9a8e41594738971_standard_desktop_medium_retina.webp");
+
 }
 /*----------------------------modal-----------------------------*/
 .modal-content{
@@ -236,4 +255,16 @@ border:none  !important ;
 }
 .btn-primary:hover{
   background:   none  !important
+}
+.modal i{
+    color: rgb(131, 5, 180);
+    font-size: 3rem;
+    border: none
+}
+.modal i:hover{
+    color: rgb(76, 17, 99)!important;
+    border: none;
+}
+.janni{
+    margin: 5rem 0 1rem 0;
 }

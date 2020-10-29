@@ -403,7 +403,7 @@ setInterval(function(){
     //al llegar al boton del final aparece el boton de siguiente nivel
     finalNivel();
 
-}, 55);
+}, 30);
 
 
 function moverNave(num){
