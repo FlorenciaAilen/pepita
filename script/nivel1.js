@@ -309,7 +309,8 @@ function moveRight(){
         colisionaLeft = false;
         }
     }
-    chocanRight= false
+    chocanRight= false;
+    playPaso();
 }
 
 function moveLeft(){
@@ -343,7 +344,8 @@ function moveLeft(){
          colisionaDown = false;
      }
     }
-    chocanLeft = false
+    chocanLeft = false;
+    playPaso();
 }
 
 function moveDown(){
@@ -379,6 +381,7 @@ function moveDown(){
       }
     }
     chocanDown=false;
+    playPaso();
 }
 function moveUp(){
 
@@ -412,7 +415,7 @@ function moveUp(){
       }
     }
     chocanUp = false;
-
+    playPaso();
 }
 //LA FUNCION QUE ACTUALIZA CONSTANTEMENTE TODO, PRIMERO BORRA TODO EL CANVAS,
 //DESPUES DIVIDE LOS FRAMES POR LA CANTIDAD DE MOVIMIENTOS EN X, INDICA EN QUE
@@ -526,7 +529,7 @@ switch (e.key) {
 case "ArrowUp":
 case "w":
 case "W":
-    moveUp()
+    moveUp();
     arriba.style.color="white";
     arriba.style.borderColor= "rgba(47, 121, 63, 0.548)";
 break;
@@ -572,3 +575,12 @@ function finalNivel() {
     }
  }
 
+ function playPiu(){
+let piu = new Audio("sound/piu.wav");
+piu.play();
+}
+
+function playPaso(){
+let paso = new Audio("sound/paso.mp3");
+paso.play();
+}
