@@ -320,20 +320,46 @@ a:hover{
     animation-fill-mode: forwards;
 }
 
-#cartel{
+/* #cartel{
     animation-name: aparece;
     animation-delay: 7s;
     animation-duration: 0s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
     text-decoration: none;
-}
+} */
 
 #aliens{
     width: 40vw;
    
 }
+.siguiente{
+    position: absolute;
+    top: 40vh;
+    right: 5vw;
+    border-radius: 10px;
+    padding: 10px;
+    background: lightskyblue;
+    border-width: 5px;
+    width: 1vw;
+    text-align: center;
+    width: 13.5vw;
+    visibility: hidden;  
+    animation-name: button;
+    animation-fill-mode: forwards;
+    animation-delay: 7s;
+}
 
+@keyframes button{
+    0%{
+      opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        opacity: 1;
+    }
+}
 
 </style>
 </head>
@@ -377,6 +403,7 @@ a:hover{
         <img id="pepita" width="200px" height="200px" src="img/pepitafinal.png" alt="">
     </div>
     <div id="planet"></div>
+    <button  id="siguiente" class="siguiente"><a href="menu.html">VOLVER AL MENU</a></button>
 </div>
 
 </body>
