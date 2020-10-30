@@ -283,7 +283,7 @@ function loop() {
     }
 
     if(playerPlatform.x + playerPlatform.width > 0 + canvas.width){
-        window.location="three.html";
+        window.location="niveltres.html";
     }
 
     if (i > -1){
