@@ -172,7 +172,7 @@ function updateGameArea() {
     }
     if (door != null) {
         if (myGamePiece.crashWith(door)) {
-            window.location.replace("cinco.html"); // PONER URL DE SIGUIENTE NIVEL
+            window.location.replace("/cinco.html"); // PONER URL DE SIGUIENTE NIVEL
         }
         if (myGamePiece.passed(door)) {
             window.location.reload();
