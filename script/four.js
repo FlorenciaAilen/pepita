@@ -7,6 +7,8 @@ var door = null;
 const canvasWith = window.innerWidth * 0.7;
 const canvasHeight = window.innerHeight * 0.7;
 
+var aux = false;
+
 let points = 0;
 
 
@@ -138,7 +140,10 @@ function updateGameArea() {
     var x, height, gap, minHeight, maxHeight, minGap, maxGap;
     for (i = 0; i < myObstacles.length; i += 1) {
         if (myGamePiece.crashWith(myObstacles[i])) {
-            window.location.reload();
+            if (!aux) {
+                window.location.reload();
+                aux = !aux;
+            }
             return;
         }
         if (!myObstacles[i].pointed && myGamePiece.passed(myObstacles[i])) {
