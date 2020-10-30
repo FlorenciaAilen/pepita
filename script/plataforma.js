@@ -46,6 +46,11 @@ var canHeight = window.innerHeight * 0.8;
 
 var sheetWidth = window.innerWidth;
 var sheetHeight= 680;
+
+
+
+const url = localStorage.getItem("url")
+
 // The attributes of the playerPlatform.
 const monster = new Image();
 monster.src = `img/monster.png`;
@@ -58,8 +63,8 @@ var defaultPlayerValues = {
     x_v: 0,
     y_v: 0,
     jump : true,
-    height: 20,
-    width: 20
+    height: 30,
+    width: 30
     };
 
 var playerPlatform = {...defaultPlayerValues};
@@ -143,10 +148,18 @@ function restartPosition(){
 }
 
 function renderplayer(movement){
+    url
     pepita = new Image();
-    pepita.src = `img/pepita_${movement}.png`;
+    // ctx.drawImage(img, 0, 0, 16, 18, 0, 0, 16, 18);
+    pepita.src = url;
     ctx.drawImage(flag, 900, 175,80,80);
-    ctx.drawImage(pepita, playerPlatform.x - playerPlatform.width, playerPlatform.y - playerPlatform.height, playerPlatform.width, playerPlatform.height);
+    // ctx3.drawImage(pepita,player.width * player.frameX,player.height * player.frameY,player.width,player.height,player.x,player.y,player.width2,player.height2)         
+    movement === 'left' ? 
+    ctx.drawImage(pepita,90,200,100,100, playerPlatform.x - playerPlatform.width, playerPlatform.y - playerPlatform.height, playerPlatform.width, playerPlatform.height)
+    :
+    ctx.drawImage(pepita,90,100,100,100, playerPlatform.x  - playerPlatform.width , playerPlatform.y - playerPlatform.height, playerPlatform.width, playerPlatform.height)
+    
+    
     ctx.lineWidth = 2;
     ctx.strokeStyle="#FF0000";
     ctx.strokeRect(playerPlatform.x - playerPlatform.width, playerPlatform.y - playerPlatform.height,  playerPlatform.width, playerPlatform.height);
