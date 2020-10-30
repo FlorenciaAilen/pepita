@@ -174,7 +174,7 @@ function updateGameArea() {
         myObstacles.push(new component(281, 2803, "img/obstacle2.png", x, 0, "image", 0, 0, 20, height));
         myObstacles.push(new component(281, 2803, "img/obstacle.png", x, height + gap, "image", 0, 0, 20, x - height - gap));
     }
-    if (door == null && points / 2 == 1) {
+    if (door == null && points / 2 == 5) {
         door = new component(115, 148, "img/door.png", canvasWith, canvasHeight / 4, "image", 0, 0, 115, 148);
 
     }
