@@ -183,7 +183,7 @@ function updateGameArea() {
             if (!aux) {
 
                 aux = !aux;
-                window.location.replace("/cinco.html"); // PONER URL DE SIGUIENTE NIVEL
+                window.location.replace("/pepita/cinco.html"); // PONER URL DE SIGUIENTE NIVEL
 
             }
 
