@@ -1,4 +1,6 @@
 
+
+
 playerSprite = new Image()
 
 function cambiarOutfit(url){

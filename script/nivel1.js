@@ -38,11 +38,14 @@ let srcX;
 let srcY;
 
 //TAMAÑO DEL TOTAL DEL LIENZO DE PEPITA
+// let sheetWidth = 709;
+// let sheetHeight= 407;
+
 let sheetWidth = 709;
-let sheetHeight= 407;
+let sheetHeight= 610;
 
 let cols = 8;
-let rows = 4;
+let rows = 6;
 
 let width = sheetWidth / cols;
 let height = sheetHeight / rows;

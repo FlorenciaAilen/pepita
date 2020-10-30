@@ -52,13 +52,23 @@ function drawMap(e){
 }
 
 // PEPITA
-// const playerSprite = new Image()
-// playerSprite.src = "../img/character2.png"
-const playerSprite = new Image()
-playerSprite.src = "img/character2.png"
+
+let url
+function obteneroutfit(){
+     url = localStorage.getItem("url")
+}
+
+obteneroutfit()
+let pepita = new Image() //ACA PONEN EL NOMBRE DE LA VARIABLE DE PEPITA QUE LE PUSIERON
+pepita.src = url; //LO MISMO ACA
+
+
+// const character = new Image()
+//  character.src = 'img/pepitatraje/pepitawonderwoman.png'
+
 
 function drawPlayer(x,y){
-    ctx3.drawImage(playerSprite,player.width * player.frameX,player.height * player.frameY,player.width,player.height,player.x,player.y,player.width2,player.height2)         
+    ctx3.drawImage(pepita,player.width * player.frameX,player.height * player.frameY,player.width,player.height,player.x,player.y,player.width2,player.height2)         
 }
 
 function move(x,y){
@@ -75,8 +85,8 @@ let player = {
     y:450,
     newX:0,
     newY:0,
-    width:88.375,
-    height:101.5,
+    width:88.625,
+    height:101.666667,
     width2:50,
     height2:50,
     frameX:0,
