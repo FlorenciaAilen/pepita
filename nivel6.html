@@ -1,55 +1,80 @@
 <!doctype html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="style/seis.css">
-	<title>Nivel 6</title>
-	<link rel="shortcut icon" href="img/pepita.png" type="image/x-icon">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    
-</head>
-<body onload="load()"  >
-	<!-- <h1>PEPITA ATACA</h1> -->
-	<button type="button" class="btn btn-primary botonapa" data-toggle="modal" data-target="#gameWin" id="siguiente" >
-		END
-	</button>
-	<div class="modal" id="gameWin" tabindex="-1" >
-		<div class="modal-dialog">
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <h5 class="modal-title">GANASTEE!!</h5>
-			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			  </button>
-			</div>
-			<div class="modal-body">
-			  <p style="color:#000;">Mataste a todos los enemigos.</p>
-			</div>
-			<div class="modal-footer">
-			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			  <button type="button" class="btn bg-danger"><a style="color:white;" href="end.html" >Next Level</a></button>
-			</div>
-		  </div>
-		</div>
-	  </div>
+<html lang="en">
 
-	<div id="instrucciones">
-		<p>Para poder moverse utilizar las teclas <i class="fas fa-arrow-circle-left no"></i> y <i class="fas fa-arrow-circle-right no"></i><br>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Nivel 6</title>
+    <link rel="shortcut icon" href="img/pepita.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/main.css">
+</head>
+
+<body onload="load()" id="seis">
+    <div id="instrucciones">
+		<p id="instru">Para poder moverse utilizar las teclas <i class="fas fa-arrow-circle-left no"></i> y <i class="fas fa-arrow-circle-right no"></i><br>
 		<p class="spa">Usar</p><div class="spa" id="space">SPACE</div><p class="spa">para DISPARAR</p>
 	  </div>
 
 	<canvas id="canvaseis" >
 		Tu navegador no soporta CANVAS
 	</canvas>
-	
-
+     <!-- modal si gano -->
+     <div class="modal" id="gameWin" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" style="text-align: center;">¡¡GANASTEE!!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="m-body">
+              <p style="color:#000; text-align: center;">Mataste a todos los Enemigos!</p>
+            </div>
+            <div class="m-footer">
+              <button type="button" class="btn bg-danger"><a style="color:white;" href="end.html" >END</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- boton si pierdo -->
+       <div class="modal" id="gameOver" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" style="text-align: center;">¡¡PERDISTE!!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="m-body">
+              <p style="color:#000; text-align: center;">Moriste las 3 veces!</p>
+            </div>
+            <div class="modal-footer">
+				<button type="button" class="btn bg-danger"><a style="color:white;" href="end.html" >END</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="script/nivel6.js"></script>
 </body>
-<script type="text/javascript" src= "script/nivel6.js"></script>
-<!-- BOOTSTRAP -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 </html>
-

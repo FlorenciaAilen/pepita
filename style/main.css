@@ -353,3 +353,51 @@ flex-direction: column;
 .pmodal{
     text-shadow: none;
 }
+/* NIVEL SEIS */
+#seis{
+    width: 100vw;
+    margin: 0 ;
+    /* background-image: url("../img/backgroundnivelcinco.jpg"); */
+    background-image: url("../img/background.jpg");
+    /* text-align: center; */
+    font-family: 'Press Start 2P', cursive !important;
+}
+
+#canvaseis {
+    position: absolute;
+    margin-left: 15vw;
+    text-align: center;
+    border: groove 4px red;
+    /* background: black; */
+    box-shadow: 10px 10px 10px #232342;
+}
+#space{
+    padding: 0.2vw 1.3vw;
+    color: brown;
+    background-color:white;
+    /* margin:0.5vw; */
+    border: whites 2px solid;
+    border-radius: 3px;
+}
+.spa{
+    display: inline;
+    margin: 0vw 0.5vw;
+}
+#instru>i{
+    font-size: 1.7rem;
+    color: white;
+    border: 3px solid black;
+    /* border-radius: 50%; */
+}
+.no{
+       text-shadow: none;
+}
+.m-body,.m-footer{
+  
+    background-color: rgba(138, 93, 211, 0.356)!important;
+}
+
+
+.he{
+    display: block !important;
+}

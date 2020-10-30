@@ -5,7 +5,6 @@ canvas.width = window.innerWidth * 0.7;
 canvas.height = window.innerHeight * 0.8;
 canvas.style.background = "black";
 
-
 function resizeCanvas() {
 	canvas.width = window.innerWidth * 0.7;;
 	canvas.height = window.innerHeight * 0.8;
@@ -13,7 +12,6 @@ function resizeCanvas() {
 window.addEventListener("resize", resizeCanvas)
 
 
-// -------------------------------------------------------------------------------
 function load() {
 	if (canvas && canvas.getContext) {
 
@@ -23,10 +21,9 @@ function load() {
 		if (ctx) {
 			x = canvas.width / 2;
 
-			// imgNave = new Image();
 			imgOvni = new Image();
 			imgOvni.src = "img/ALIEN.png";
-			// imgNave.src = "img/seis/FIN2.png";
+
 			obteneroutfit()
 			imgNave = new Image() //ACA PONEN EL NOMBRE DE LA VARIABLE DE PEPITA QUE LE PUSIERON
 			imgNave.src = url;
@@ -42,7 +39,6 @@ function load() {
 				setTimeout(anima, 1500);
 				disparoEnemigo = setTimeout(disparaEnemigo, tiempoDisparo);
 			}
-
 		}
 		else {
 			alert("Error al crear tu contexto");
@@ -61,6 +57,7 @@ document.addEventListener("keyup", function (e) {
 
 /******************* VARIABLES ********************/
 let url
+var centerX = canvas.width / 2;
 var canvas, ctx;
 let contador = 0;
 let nro = 0;
@@ -86,9 +83,6 @@ var endGame = false;
 var disparoEnemigo;
 var tiempoDisparo = 1000; //Del Enemigo
 var puntos = 0;
-var sound = document.getElementById("dispara");
-// let idmodel=document.getElementById("gameWin")
-// console.log(idmodel)
 /***************** OBJETOS ******************/
 function Bala(x, y, w) {
 	this.x = x;
@@ -96,16 +90,16 @@ function Bala(x, y, w) {
 	this.w = w;
 	this.dibuja = function () {
 		ctx.save();
-		ctx.fillStyle = "blue";
+		ctx.fillStyle = "white";
 		ctx.fillRect(this.x, this.y, this.w, this.w);
-		this.y = this.y - 6;
+		this.y = this.y - 5.5;//velocidad de la bala
 		ctx.restore();
 	};
 	this.dispara = function () {
 		ctx.save();
 		ctx.fillStyle = "red";
 		ctx.fillRect(this.x, this.y, this.w, this.w);
-		this.y = this.y + 4;
+		this.y = this.y + 4.5;
 		ctx.restore();
 	};
 }
@@ -180,30 +174,23 @@ function Enemigo(x, y) {
 			ctx.fillStyle = "black";
 			ctx.fillRect(this.x, this.y, 35, 30);
 		}
-
 	};
 }
 
 /***************** FUNCIONES ******************/
-function modelVisible(){
-	$( document ).ready(function() {
-		$('#myModal').modal('toggle')
-	});
-}
-modelVisible()
 function principal() {//MUESTRA EL MENSAJE DEL INICIO-PRINCIPAL
-	mensaje("COMIENZA EL JUEGO");
-	ctx.fillText("Tenes 3 Vidas", canvas.width / 4.4, canvas.height / 2, canvas.width, 10);
-	ctx.fillText("Cantidad de Balas: 100", canvas.width / 30, canvas.height / 1.5);
+	mensaje("");
+	ctx.textAlign = "center";
+	ctx.fillText("Comienza el Juego", centerX, 100);
+	ctx.fillText("Tenes 3 Vidas", centerX, 300);
+	ctx.fillText("Balas: 100", centerX, 400);
 }
 function anima() {//ANIMA Y CONTROLA LA COLISION CON BALAS
 
 	if (endGame == false) {
-
 		verifica();
 		pinta();
 		colisiones();
-
 		requestAnimationFrame(anima);
 		for (var j = 0; j < balasEnemigas_array.length; j++) {
 			bala = balasEnemigas_array[j];
@@ -213,15 +200,10 @@ function anima() {//ANIMA Y CONTROLA LA COLISION CON BALAS
 					(bala.y > nave.y) &&
 					(bala.y < nave.y + nave.h)) {
 					nro++;
-
-
 					controlando()
-
 				}
-
 			}
 		}
-
 	}
 }
 function controlando() {//CONTROLA LA CANTIDAD DE VIDAS
@@ -240,15 +222,15 @@ function controlando() {//CONTROLA LA CANTIDAD DE VIDAS
 		playVida()
 		playGameOver()
 		gameOver()
-		
 	}
 }
 function mensaje(cadena) {//FUNCION UTILIZADA PARA MESAJES 
-	var lon = (canvas.width) * cadena.length / 100;
+	var centerX = canvas.width / 2;
+	ctx.textAlign = "center";
 	ctx.fillStyle = "white";
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	ctx.font = "bold 50px 'Press Start 2P', cursive ";
-	ctx.fillText(cadena, lon, (canvas.height) / 4);
+	ctx.font = "bold 43px 'Press Start 2P', cursive ";
+	ctx.fillText(cadena, centerX, (canvas.height) / 4);
 }
 function colisiones() {//COLISION DE BALA CON ENEMIGO
 	for (var i = 0; i < ovnis_array.length; i++) {
@@ -272,54 +254,32 @@ function colisiones() {//COLISION DE BALA CON ENEMIGO
 	}
 }
 function gameOver() {//MUESTRA LOS CARTELES CORRESPONDIENTES
-
-
 	if (enemigosVivos == 0) {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		balas_array = [];
 		ovnis_array = [];
 		balasEnemigas_array = [];
-		ctx.fillStyle = "white";
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		ctx.font = "bold 50px 'Press Start 2P', cursive ";
-		ctx.fillText("  GANASTE ", canvas.width/3.5, (canvas.height) / 4);
+		mensaje("GANASTE")
 		var imgGana = new Image();
-		imgGana.src = "img/marcianito_family.png";
+		imgGana.src = fin;
 		imgGana.onload = function () {
-
-			ctx.drawImage(imgGana, (canvas.width) / 2.7, canvas.height/3);
+			ctx.drawImage(imgGana, (canvas.width) / 4, canvas.height / 3);
 		}
-		// finalNivel();
+		$('#gameWin').modal('show');
 	}
 	else if (contador == 33) {
-		ctx.fillStyle = "white";
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		ctx.font = "bold 50px 'Press Start 2P', cursive ";
-		ctx.fillText("GAME OVER", canvas.width/3.55, (canvas.height) / 4);
+		mensaje("GAME OVER")
 		var imgPierde = new Image();
 		imgPierde.src = "img/marcianito_llora.png";
 		imgPierde.onload = function () {
-			ctx.drawImage(imgPierde, (canvas.width) / 2.5, (canvas.height)/4);
+			ctx.textAlign = "center";
+			ctx.drawImage(imgPierde, canvas.width/2.7,canvas.height/3);
 		}
-		
-		
+		$('#gameOver').modal('show');
 	}
-	
 	endGame = true;
 	clearTimeout(disparoEnemigo);
-	
 }
-// function final() {
-//     if(contador==33) {
-
-//         console.log("final")
-//         let button = document.getElementById('siguiente')
-//         button.classList.remove('hidden')
-
-//     }
-//  }
-//  final();
-// CORREGIR BOTON FIN
 function score() {//MUESTRA EL SCORE OBTENIDO
 	ctx.save();
 	ctx.fillStyle = "white";
@@ -331,22 +291,25 @@ function score() {//MUESTRA EL SCORE OBTENIDO
 function municiones() { //MUESTRA LA CANTIDAD DE DISPAROS QUE NOS QUEDAN
 	ctx.save();
 	ctx.fillStyle = "white";
-	ctx.clearRect(0, 60, canvas.width, 40);
+	ctx.clearRect(0, 50, canvas.width, 20);
 	ctx.font = "bold 14px 'Press Start 2P', cursive ";
-	ctx.fillText("Munición: " + municion, canvas.width / 10, 40);
+	ctx.fillText("Munición: " + municion, canvas.width / 8, 50);
 	ctx.restore();
+
+	// ctx.save();
+	// ctx.fillStyle = "white";
+	// ctx.clearRect(0, 60, canvas.width, 40);
+	// ctx.font = "bold 14px 'Press Start 2P', cursive ";
+	// ctx.fillText("Munición: " + municion, canvas.width / 10, 40);
+	// ctx.restore();
 }
 function live() {//MUESTRA LAS VIDAS 
-
 	ctx.save();
 	ctx.fillStyle = "white";
 	ctx.clearRect(0, 90, canvas.width, canvas.height / 50);
 	ctx.font = "bold 14px 'Press Start 2P', cursive ";
 	ctx.fillText(vida + " :VIDAS", canvas.width / 1.15, 30);
-
 	ctx.restore();
-
-
 }
 function verifica() {//VERIFICA LAS TECLAS
 	if (tecla[teclaDerecha]) x += 5;
@@ -357,11 +320,10 @@ function verifica() {//VERIFICA LAS TECLAS
 	//Disparo
 	if (tecla[teclaEspacio]) {
 		// //activar sonido de disparo
-		// sound.onplay()
 		playTiro()
 		if (tiempoBala == true && municion != 0) {
 			tiempoBala = false;
-			balas_array.push(new Bala(nave.x + 60, nave.y - 3, 5));
+			balas_array.push(new Bala(nave.x + 30, nave.y - 3, 5));
 			(municion > 0) ? municion = municion - 1 : false;
 			tecla[teclaEspacio] = false;
 			disparaEnemigo();
@@ -454,25 +416,32 @@ function playGameOver() {
 	paso.play();
 }
 
-// cambia de personajes
+/*****************CAMBIO DE PERSONAJES ******************/
+let fin;
 function obteneroutfit() {
 	url = localStorage.getItem("url")
+	
 	switch (url) {
 		case "img/pepitatraje/pepitawonderwoman.png":
 			url = "img/pepitatraje/naveWonder.png";
+			fin="img/pepitatraje/pepiwonderwoman.png";
 			break;
 		case "img/pepitatraje/pepitakillbill.png":
 			url = "img/pepitatraje/naveKillbill.png";
+			fin ="img/pepitatraje/pepikillbill.png"
 			break;
 		case "img/pepitatraje/pepitabruja.png":
 			url = "img/pepitatraje/naveBruja.png";
+			fin = "img/pepitatraje/pepibruja.png"
 			break;
 		case "img/pepitatraje/pepitajedi.png":
 			url = "img/pepitatraje/naveJedi.png";
+			fin = "img/pepitatraje/pepijedi.png"
 			break;
 
 		default:
 			url = "img/pepitatraje/navePepita.png";
+			fin ="img/pepitatraje/pepiorigin.png"
 			break;
 	}
 }
