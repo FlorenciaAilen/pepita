@@ -12,19 +12,19 @@ let points = 0;
 
 
 let url
-function obteneroutfit(){
-     url = localStorage.getItem("url")
+function obteneroutfit() {
+    url = localStorage.getItem("url")
 }
 
 obteneroutfit()
 
 // component(width, height, color, x, y, type, frameX, frameY, width2, height2)
 function startGame() {
-    myGamePiece = new component(709/8, 610/6, url, 10, 120, "image", 0, 5,70,79);
-    myBackground = new component(canvasWith, canvasHeight, "https://i.pinimg.com/originals/84/c2/a2/84c2a238750dd630e0129f4451ba2092.jpg", 0, 0, "image",0,0,canvasWith,canvasHeight);
+    myGamePiece = new component(709 / 8, 610 / 6, url, 10, 120, "image", 0, 5, 70, 79);
+    myBackground = new component(canvasWith, canvasHeight, "https://i.pinimg.com/originals/84/c2/a2/84c2a238750dd630e0129f4451ba2092.jpg", 0, 0, "image", 0, 0, canvasWith, canvasHeight);
     myGamePiece.gravity = 0.05;
-    myObstacles2.push(new component(0, 0, "red", 0, 0,0,0,1000000000000000000000000000000000000000000,1));
-    myObstacles2.push(new component(0, 0, "red", 0, canvasHeight,0,0,1000000000000000000000000000000000000000000,1));
+    myObstacles2.push(new component(0, 0, "red", 0, 0, 0, 0, 1000000000000000000000000000000000000000000, 1));
+    myObstacles2.push(new component(0, 0, "red", 0, canvasHeight, 0, 0, 1000000000000000000000000000000000000000000, 1));
     document.addEventListener("keydown", (e) => {
         if (e.key == " ") {
             e.preventDefault();
@@ -38,7 +38,7 @@ function startGame() {
         }
     });
 
-    
+
     myGameArea.start();
 }
 
@@ -69,8 +69,8 @@ function component(width, height, color, x, y, type, frameX, frameY, width2, hei
     this.speedY = 0;
     this.x = x;
     this.y = y;
-    this.width2=width2;
-    this.height2=height2;
+    this.width2 = width2;
+    this.height2 = height2;
 
     this.gravity = 0;
     this.gravitySpeed = 0;
@@ -85,7 +85,7 @@ function component(width, height, color, x, y, type, frameX, frameY, width2, hei
             const image = new Image();
             image.src = color;
             //tx.drawImage(characterSprite,character.width * character.frameX,character.height *character.frameY,character.width,character.height,character.x,character.y,character.width2,character.height2)
-            ctx.drawImage(image, this.width *this.frameX, this.height*this.frameY,this.width,this.height,
+            ctx.drawImage(image, this.width * this.frameX, this.height * this.frameY, this.width, this.height,
                 this.x,
                 this.y,
                 this.width2, this.height2);
@@ -163,12 +163,12 @@ function updateGameArea() {
         minGap = 100;
         maxGap = 200;
         gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
-        myObstacles.push(new component(281, 2803, "img/obstacle2.png", x, 0, "image",0,0,20, height));
-        myObstacles.push(new component(281, 2803, "img/obstacle.png", x, height + gap, "image",0,0,20,x - height - gap));
+        myObstacles.push(new component(281, 2803, "img/obstacle2.png", x, 0, "image", 0, 0, 20, height));
+        myObstacles.push(new component(281, 2803, "img/obstacle.png", x, height + gap, "image", 0, 0, 20, x - height - gap));
     }
     if (door == null && points / 2 == 5) {
-        door = new component(115, 148, "img/door.png", canvasWith, canvasHeight / 4, "image",0,0,115 / 2,148 / 2);
-        
+        door = new component(115, 148, "img/door.png", canvasWith, canvasHeight / 4, "image", 0, 0, 115, 148);
+
     }
     if (door != null) {
         if (myGamePiece.crashWith(door)) {
