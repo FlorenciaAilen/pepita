@@ -269,8 +269,12 @@ text-align: center;
 }
 /*----------------------------modal-----------------------------*/
 .modal-content{
-    background-color: rgba(138, 93, 211, 0.712)!important;
+    background-color: rgba(138, 93, 211, 0.986)!important;
     color: black!important;
+}
+
+.modal-content  p{
+    border: none;
 }
 .modal-title{
     color: white!important;
@@ -346,3 +350,6 @@ align-items: center;
 flex-direction: column;
 }
 
+.pmodal{
+    text-shadow: none;
+}
