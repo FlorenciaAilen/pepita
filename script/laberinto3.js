@@ -121,7 +121,7 @@ function colisiona() {
     if (character.x + character.width>= canvas.width) {
         colisionaRight = true;
     } 
-    if (character.y <= 350) {
+    if (character.y <= canvas.height/2) {
         colisionaUp = true;
     } 
     if (character.y + character.height >= canvas.height) {
@@ -160,6 +160,7 @@ document.addEventListener("keydown", (e) => {
             enemigosArray.splice(enemigosArray.indexOf(character.criaturaDead),1);
             character.colisionCriatura = false;
             character.frameY = 4;
+            playPiu()
         }
         
 break;
@@ -174,6 +175,7 @@ break;
                 colisionaRight = false;
                 colisionaDown = false;
                 colisionaLeft = false;
+                playPaso();
             }
             arriba.style.color="white";
             arriba.style.borderColor= "rgba(47, 121, 63, 0.548)";       
@@ -189,7 +191,8 @@ break;
             character.y+=velocidad;
             colisionaRight = false;
             colisionaUp = false;
-            colisionaLeft = false;}
+            colisionaLeft = false;
+            playPaso();}
             abajo.style.color="white";
             abajo.style.borderColor= "rgba(47, 121, 63, 0.548)";
         
@@ -206,6 +209,7 @@ break;
                 colisionaRight = false;
                 colisionaUp = false;
                 colisionaDown = false;
+                playPaso();
         }
         izquierda.style.color="white";
         izquierda.style.borderColor= "rgba(47, 121, 63, 0.548)";      
@@ -222,7 +226,8 @@ break;
             character.x+=velocidad;
             colisionaDown = false;
             colisionaUp = false;
-            colisionaLeft = false; }
+            colisionaLeft = false; 
+            playPaso();}
             derecha.style.color="white";
             derecha.style.borderColor= "rgba(47, 121, 63, 0.548)";        
     break;
@@ -275,3 +280,13 @@ totalTime-=1;
 setTimeout("updateClock()",1000);
 }
 }
+
+function playPiu(){
+    let piu = new Audio("sound/piu.wav");
+    piu.play();
+    }
+    
+    function playPaso(){
+    let paso = new Audio("sound/paso.mp3");
+    paso.play();
+    }
