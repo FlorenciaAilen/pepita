@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pepito</title>
+    <link rel="shortcut icon" href="img/pepitaicono.svg" type="image/x-icon">
+    <title>La venganza de Pepita</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="shortcut icon" href="img/pepita.png" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
       body{
         background-image: url("img/background.jpg");
+        font-family: 'Press Start 2P', cursive !important;
       }
 
       /* --------- inicio nave-------- */
@@ -174,10 +178,11 @@
     width: 5%;
     height: 5%;
     position: absolute;
-    left: 15vw;
+    left: 16.5vw;
     top: 30vh;
     z-index: 10;
     border: none;
+
 }
 
 
@@ -187,12 +192,13 @@
 
 @keyframes vuelo{
     0%{
-
-        transform: translateY(50px)
+        transform: translateY(50px) scale(1);
+        visibility: visible;
     }
-    100%{
-        transform: translateY(-1000px);
 
+    100%{
+        transform: translateY(-100px) scale(0);
+        visibility: hidden;
     }
 
 }
@@ -211,8 +217,8 @@
 
 #pepita{
     position: absolute;
-    bottom: 0px;
-    right: -20px;
+    bottom: 5%;
+    right: 5%;
     height: 40%;
     animation-name: caminar;
     animation-duration: 5s;
@@ -220,6 +226,24 @@
     animation-timing-function: linear;
     animation-fill-mode: both;
     animation-iteration-count: inherit;
+    z-index: 10000;
+}
+
+
+#planet{
+    width: 80%;
+    height: 40%;
+    background: #aa4b6b;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    box-shadow: 0 0 50px black;
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    z-index: 0;
 }
 
 @keyframes caminar{
@@ -231,6 +255,7 @@
         transform: translateX(-600px);
 
     }
+    
 
 }
 
@@ -253,21 +278,38 @@
     position: absolute;
     left: 25%;
     top: 25%;
-    background: rgb(14, 117, 95);
+    
     box-shadow: 0 0 10px #b6e7b6, 0 0 40px  #b6e7b6, 0 0 80px  #b6e7b6,;
     z-index: 100;
     border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid black ;
+    background-color: brown;
+    border-radius: 10px;
+    padding: 15px;
 }
 
-#cartel>p,a{
-    font-size: 10%;
+#cartel{
+    font-size: 1em;
     overflow: hidden;
-    color: #fff;
-    text-decoration:none;
-    font-family: 'Press Start 2P', cursive !important;
+
     text-align: center;
     opacity: 0;
     font-size: 0;
+}
+
+p,a{
+    color: #fff;
+    text-decoration:none;
+}
+a:hover{
+    text-decoration: none;
+    color:black;
 }
 
 #cartel{
@@ -275,13 +317,21 @@
     animation-fill-mode: forwards;
 }
 
-#cartel>p,a{
+#cartel{
     animation-name: aparece;
     animation-delay: 7s;
     animation-duration: 6s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
+    text-decoration: none;
 }
+
+#aliens{
+    width: 40vw;
+   
+}
+
+
 </style>
 </head>
 
@@ -289,8 +339,8 @@
 
 <body>
     <div id="container">
-    <div class="movimientoNave1">
-                
+        <div id="aliens"><img src="img/aliens.svg" alt=""></div>
+    <div class="movimientoNave1">     
         <div class="nave1">
             <div class="ventana1">
                 <img src="img/Marcianito_dasfio_sor.png" alt="marcianito" id="alien2">
@@ -315,11 +365,15 @@
         
     </div>
 
-    <div id="cartel"><p>NO LLEGO A TIEMPO! ....</p> <a href="https://andreaibt21.github.io/Project/index.html#inicio" target="_blank" >Clickea aqui para ver que le paso a Pepito</a></div>
+    <div id="cartel">
+        <p>NOOO, NO LLEGASTE A TIEMPO!</p>
+        <br> 
+    <a href="https://andreaibt21.github.io/Project/index.html#inicio" >Continua con la historia aquí</a></div>
 
     <div>
         <img id="pepita" width="200px" height="200px" src="img/pepitafinal.png" alt="">
     </div>
+    <div id="planet"></div>
 </div>
 
 </body>
