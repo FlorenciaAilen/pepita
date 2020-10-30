@@ -87,7 +87,8 @@ var disparoEnemigo;
 var tiempoDisparo = 1000; //Del Enemigo
 var puntos = 0;
 var sound = document.getElementById("dispara");
-
+// let idmodel=document.getElementById("gameWin")
+// console.log(idmodel)
 /***************** OBJETOS ******************/
 function Bala(x, y, w) {
 	this.x = x;
@@ -184,6 +185,12 @@ function Enemigo(x, y) {
 }
 
 /***************** FUNCIONES ******************/
+function modelVisible(){
+	$( document ).ready(function() {
+		$('#myModal').modal('toggle')
+	});
+}
+modelVisible()
 function principal() {//MUESTRA EL MENSAJE DEL INICIO-PRINCIPAL
 	mensaje("COMIENZA EL JUEGO");
 	ctx.fillText("Tenes 3 Vidas", canvas.width / 4.4, canvas.height / 2, canvas.width, 10);
@@ -233,6 +240,7 @@ function controlando() {//CONTROLA LA CANTIDAD DE VIDAS
 		playVida()
 		playGameOver()
 		gameOver()
+		
 	}
 }
 function mensaje(cadena) {//FUNCION UTILIZADA PARA MESAJES 
@@ -293,7 +301,8 @@ function gameOver() {//MUESTRA LOS CARTELES CORRESPONDIENTES
 		imgPierde.onload = function () {
 			ctx.drawImage(imgPierde, (canvas.width) / 2.5, (canvas.height)/4);
 		}
-
+		
+		
 	}
 	
 	endGame = true;
