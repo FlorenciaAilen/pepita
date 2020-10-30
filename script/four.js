@@ -5,7 +5,7 @@ var myBackground;
 var door = null;
 
 const canvasWith = window.innerWidth * 0.7;
-const canvasHeight = window.innerHeight * 0.8;
+const canvasHeight = window.innerHeight * 0.7;
 
 let points = 0;
 
@@ -157,7 +157,7 @@ function updateGameArea() {
     }
     if (door != null) {
         if (myGamePiece.crashWith(door)) {
-            window.location.replace("/six"); // PONER URL DE SIGUIENTE NIVEL
+            window.location.replace("/cinco.html"); // PONER URL DE SIGUIENTE NIVEL
         }
         if (myGamePiece.passed(door)) {
             window.location.reload();
