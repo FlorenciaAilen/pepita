@@ -6,7 +6,7 @@
     <title>pepito</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="shortcut icon" href="img/pepita.png" type="image/x-icon">
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <style>
       body{
         background-image: url("img/background3.jpg");
@@ -200,17 +200,87 @@
 .movimientoNave1{
     animation-name: vuelo;
     animation-duration: 5s;
-    animation-delay: 5s;
+    animation-delay: 3s;
     animation-timing-function: linear;
     animation-fill-mode: both;
     animation-iteration-count: inherit;
 
 }
 
+/*PEPITA*/
+
 #pepita{
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 0px;
+    right: -20px;
+    height: 40%;
+    animation-name: caminar;
+    animation-duration: 5s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-iteration-count: inherit;
+}
+
+@keyframes caminar{
+    0%{
+
+        transform: translateX(-100px)
+    }
+    100%{
+        transform: translateX(-600px);
+
+    }
+
+}
+
+/*cartel*/
+
+@keyframes aparece{
+    100%{
+        height: 25%;
+        width: 50%;
+        font-size: 24px;
+        opacity: 1;
+
+    }
+}
+
+
+#cartel{
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    background: rgb(14, 117, 95);
+    box-shadow: 0 0 10px #b6e7b6, 0 0 40px  #b6e7b6, 0 0 80px  #b6e7b6,;
+    z-index: 100;
+    border-radius: 20px;
+}
+
+#cartel>p,a{
+    font-size: 10%;
+    overflow: hidden;
+    color: #fff;
+    text-decoration:none;
+    font-family: 'Press Start 2P', cursive !important;
+    text-align: center;
+    opacity: 0;
+    font-size: 0;
+}
+
+#cartel{
+    animation: aparece 3s linear 5s;
+    animation-fill-mode: forwards;
+}
+
+#cartel>p,a{
+    animation-name: aparece;
+    animation-delay: 7s;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
 </style>
 </head>
@@ -244,6 +314,8 @@
         </div>
         
     </div>
+
+    <div id="cartel"><p>NO LLEGO A TIEMPO! ....</p> <a href="https://andreaibt21.github.io/Project/index.html#inicio" target="_blank" >Clickea aqui para ver que le paso a Pepito</a></div>
 
     <div>
         <img id="pepita" width="200px" height="200px" src="../img/pepita2.png" alt="">

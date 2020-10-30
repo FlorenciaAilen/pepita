@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="shortcut icon" href="img/pepita.png" type="image/x-icon">
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
     <style>
       body{
         background-image: url("img/background3.jpg");
@@ -29,10 +30,6 @@
       }
 
 
-      .three{
-        margin-left: 15vw;
-      }
-
       #box-a{
         margin-left: 25vw;
         width: 20vw; 
@@ -43,18 +40,43 @@
         text-decoration: none;
         color: white;
       }
+
+      #canvastres{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
     
     </style>
   </head>
 <body>
 
-      <div class="d-flex flex-column justify-content-center aling-items-end three">
+      <div id="canvastres">
+
+    
+    
+
      
-      <div><div id="leyenda" class="bg-danger text-white ">LLEGA HASTA EL FONDO DEL LABERINTO <br> CUIDADO!! NO TE PUEDEN ATRAPAR LOS ENEMIGOS</div></div>
+      <div id="leyenda" class="bg-danger text-white ">LLEGA HASTA EL FONDO DEL LABERINTO <br> CUIDADO!! NO TE PUEDEN ATRAPAR LOS ENEMIGOS</div>
      
-      <div>
+    
         <canvas id="canvatres"></canvas>
-      </div>
+
+
+      <!-- <div class="container-flechas">
+        <div class="uno">
+          <button class="flechas" id="arriba" onclick="move(player.newX = player.x, player.newY = player.y - 50, player.moving = true, player.frameY = 3)" ><i class="fas fa-arrow-circle-up"></i></button>
+        </div>
+        <div class="dos"> 
+          <button class="flechas" id="izquierda" onclick=" move(player.newX = player.x - 50, player.newY = player.y, player.moving = true, player.frameY = 2)"><i class="fas fa-arrow-circle-left"></i></button>
+          <button class="flechas" id="derecha" onclick=" checkColl(),move( player.newX = player.x + 50, player.newY = player.y, player.moving = true, player.frameY = 1)"><i class="fas fa-arrow-circle-right"></i></button>
+        </div>
+        <div class="tres">
+          <button id="abajo" class="flechas" onclick=" move(player.newX = player.x, player.newY = player.y + 50, player.moving = true, player.frameY = 0)"><i class="fas fa-arrow-circle-down"></i></button>
+        </div>
+      </div> -->
+
         <!-- modal si gano -->
          <div class="modal" id="gameWin" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
@@ -96,9 +118,11 @@
             </div>
           </div>
           <!-- boton siguiente nivel -->
-          <div id="box-a" class="text-white rounded-pill d-flex justify-content-center aling-items-center hidden ">
-         <a id="btn" href="four.html" class="puerta hidden">Next Level</a>
-        </div>
+          <button id="siguiente" class="siguiente hidden" >
+         <a href="index2.html" >Siguiente<br>Nivel</a>
+        </button>
+
+        
       </div>
 
       

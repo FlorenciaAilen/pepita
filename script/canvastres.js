@@ -108,8 +108,8 @@ function checkColl(){
                     if(coinsCollect.length == 34){
                         console.log('win')
                         move(player.newX,player.newY)
-                        document.getElementById('btn').classList.remove('hidden')
-                        document.getElementById('box-a').classList.add('bg-danger')
+                        document.getElementById('siguiente').classList.remove('hidden')
+                        
                         $('#gameWin').modal('show')
                     }else{
                        
@@ -181,6 +181,7 @@ document.addEventListener("keydown", (e) => {
     default:
         break;
     }
+    playPaso()
     checkColl()
     handlePlayerFrame()
     })
@@ -221,6 +222,7 @@ function collision(enemy){
         }
                   
         if(colide){
+            playFail()
             player.x = 50
             player.y = 450
             console.log('choco')
@@ -421,7 +423,7 @@ function updateFrame() {
       drawEnemies(enemy)
       collision(enemy)
     })
-    
+    console.log(coinsCollect.length)
 
   currentFrame3++
 }
@@ -463,6 +465,7 @@ class Coin {
             }
                       
             if(colide){
+                playCoin()
                 coins.splice(coins.indexOf(this), 1);
                 coinsCollect.push(this)
             };
@@ -512,3 +515,18 @@ coins.push(new Coin(215,375))
 coins.push(new Coin(165,325))
 coins.push(new Coin(165,165))
 coins.push(new Coin(225,165))
+
+function playPaso(){
+    let paso = new Audio("sound/paso.mp3");
+    paso.play();
+    }
+    
+    function playCoin(){
+        let paso = new Audio("sound/coinsound.mp3");
+        paso.play();
+        }
+
+        function playFail(){
+            let paso = new Audio("sound/fail.mp3");
+            paso.play();
+            }
