@@ -181,6 +181,7 @@
 }
 
 
+
 .movimientoNave1>div{
     border: none;
 }
@@ -197,6 +198,7 @@
 
 }
 
+
 .movimientoNave1{
     animation-name: vuelo;
     animation-duration: 5s;
@@ -211,9 +213,10 @@
 
 #pepita{
     position: absolute;
-    bottom: 0px;
+    bottom: 5%;
     right: -20px;
     height: 40%;
+    width: 12%;
     animation-name: caminar;
     animation-duration: 5s;
     animation-delay: 0s;
@@ -253,7 +256,7 @@
     position: absolute;
     left: 25%;
     top: 25%;
-    background: rgb(14, 117, 95);
+    background: brown;
     box-shadow: 0 0 10px #b6e7b6, 0 0 40px  #b6e7b6, 0 0 80px  #b6e7b6,;
     z-index: 100;
     border-radius: 20px;
@@ -278,17 +281,39 @@
 #cartel>p,a{
     animation-name: aparece;
     animation-delay: 7s;
-    animation-duration: 6s;
+    animation-duration: 0s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
 }
+
+#piso{
+    height: 5%;
+    width: 100%;
+    background-color:rgb(80, 45, 45);
+    position: absolute;
+    bottom: 0;
+}
+
+#planeta{
+    height: 100px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    z-index: 4;
+}
+
+
+
 </style>
 </head>
 
 
 
 <body>
-    <div id="container">
+
+    <div id="container">      
+        
+                
     <div class="movimientoNave1">
                 
         <div class="nave1">
@@ -320,6 +345,7 @@
     <div>
         <img id="pepita" width="200px" height="200px" src="img/pepitafinal.png" alt="">
     </div>
+    <div id="piso"></div>
 </div>
 
 </body>
