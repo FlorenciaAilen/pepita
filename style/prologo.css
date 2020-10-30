@@ -36,9 +36,10 @@
     left: 13%;
     right: 13%;
     height: 100%;
-    animation: play 60s ;
-   
+    animation-name: play;
+    animation-duration: 60s;
     animation-fill-mode: forwards;
+    visibility: hidden;
 }
 
 #headings{
@@ -58,6 +59,7 @@ p{
 
 @keyframes play{
     0%{
+        visibility: visible;
         transform: rotateX(10deg) translate3d(0, 100rem, 0);
         opacity:1;
     }
