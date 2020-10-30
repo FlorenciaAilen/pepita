@@ -153,7 +153,10 @@ function updateGameArea() {
     }
     for (i = 0; i < myObstacles2.length; i += 1) {
         if (myGamePiece.crashWith(myObstacles2[i])) {
-            window.location.reload();
+            if (!aux) {
+                window.location.reload();
+                aux = !aux;
+            }
             return;
         }
     }
@@ -177,10 +180,22 @@ function updateGameArea() {
     }
     if (door != null) {
         if (myGamePiece.crashWith(door)) {
-            window.location.replace("/cinco.html"); // PONER URL DE SIGUIENTE NIVEL
+            if (!aux) {
+
+                aux = !aux;
+                window.location.replace("/cinco.html"); // PONER URL DE SIGUIENTE NIVEL
+
+            }
+
         }
         if (myGamePiece.passed(door)) {
-            window.location.reload();
+            if (!aux) {
+
+                aux = !aux;
+                window.location.reload();
+
+            }
+
         }
         door.speedX = -2;
         door.update();
