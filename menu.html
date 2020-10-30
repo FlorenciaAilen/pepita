@@ -19,20 +19,20 @@
            <!--Menu del juego-->
             <div id="main" class="frame visible d-flex justify-content-center flex-column">
 
-                <div>
+              <div>
                     <img id="titulo" src="img/titulo2.gif" alt="">
-                </div>
+              </div>
 
-                <!--Logo Code Queen-->
-                <div class="d-flex flex-row justify-content-center ">
+              <!--Logo Code Queen-->
+              <div class="d-flex flex-row justify-content-center cq">
                     <p class="m-3">By</p>
-                <!-- Button trigger modal -->
+                
                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCQ">
                      <img id="logoCodeQueens" src="img/logo_code_queens.png" alt="logo_code_queens">
                    </button>
                    
                    <!-- Modal -->
-                   <div class="modal fade" id="exampleModalCQ" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModalCQ" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                      <div class="modal-dialog modal-xl">
                        <div class="modal-content">
                          <div class="modal-header">
@@ -133,17 +133,17 @@
                          </div>
                        </div>
                      </div>
-                   </div>
                 </div>
+              </div>
 
-                <div class="d-flex flex-row">
+              <div class="menu-container">
                     <!-- Imagen Pepita -->
-                    <div id="pepita-menu">
+                   <div id="pepita-menu">
                         <img id="img-pepita" src="img/pepimenu.png" alt="">
-                    </div>
+                    </div> 
     
                     <div>
-
+                      <div class="botones-principales">
                         <!-- Button Play game -->
                         <button class="main-button"  onclick="game.setFrameVisible('canva'); game.setFrameHidden('main');">
                           Comenzar
@@ -156,7 +156,7 @@
                         <button class="main-button" type="button" data-toggle="modal" data-target="#exampleModal2">
                             Reglas
                         </button>
-                        
+                        </div>
                         <!-- Modal info -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
@@ -196,29 +196,39 @@
             </div>
         
             <!-- CANVAS -->
-            <div id="canva" class="frame hidden grilla">
+            <div id="canva" class="frame hidden papi-skin-container">
               <div id="contskin">
                <p>SELECCIONA UNA SKIN Y COMIENZA A JUGAR</p>
               <div id="cont">
-                <div id="origin">
+                <div id="origin" class="pepi-card">
                   <img class="skin" src="img/pepitatraje/pepiorigin.png"  alt="">
-                  <button class="main-button-skin" type="button" onclick="cambiarOutfit('img/pepitatraje/pepitaorigin.png')"><a href="index1.html">Pepita</a></button>                  
+                    <a href="index1.html" style="width:18vw; height:15vh; display:flex; align-items: center;" class="main-button main-button-skin" onclick="cambiarOutfit('img/pepitatraje/pepitaorigin.png')">
+                      Pepita
+                    </a>
                 </div>
-                <div id="wonderwoman">
+
+                <div id="wonderwoman" class="pepi-card">
                   <img class="skin"   src="img/pepitatraje/pepiwonderwoman.png"  alt="">
-                  <button class="main-button-skin" onclick="cambiarOutfit('img/pepitatraje/pepitawonderwoman.png')" type="button"><a href="index1.html">Pepita Wonder</a></button>                  
+                    <a href="index1.html" style="width:18vw; height:15vh; " class="main-button main-button-skin" onclick="cambiarOutfit('img/pepitatraje/pepitawonderwoman.png')" >
+                      Pepita<br>Wonder
+                    </a>
                 </div>
-                <div id="jedi">
+
+                <div id="jedi" class="pepi-card">
                   <img class="skin"   src="img/pepitatraje/pepijedi.png"  alt="">
-                  <button class="main-button-skin" type="button" onclick="cambiarOutfit('img/pepitatraje/pepitajedi.png')"><a href="index1.html">Pepita Jedi</a></button>                  
+                    <a href="index1.html" style="width:18vw; height:15vh; " class="main-button main-button-skin" onclick="cambiarOutfit('img/pepitatraje/pepitajedi.png')">
+                      Pepita<br>Jedi
+                    </a>
                 </div>
-                <div id="kiddo">
+                
+                <div id="kiddo" class="pepi-card">
                   <img class="skin"   src="img/pepitatraje/pepikillbill.png"  alt="">
-                  <button class="main-button-skin" type="button" onclick="cambiarOutfit('img/pepitatraje/pepitakillbill.png')"><a href="index1.html">Pepita Kiddo</a></button>                  
+                    <a href="index1.html" style="width:18vw; height:15vh; " class="main-button main-button-skin" onclick="cambiarOutfit('img/pepitatraje/pepitakillbill.png')">Pepita<br>Kiddo</a>
                 </div>
-                <div id="kiddo">
+                
+                <div id="kiddo" class="pepi-card">
                   <img class="skin"   src="img/pepitatraje/pepibruja.png"  alt="">
-                  <button class="main-button-skin" type="button" onclick="cambiarOutfit('img/pepitatraje/pepitabruja.png')"><a href="index1.html">Pepita Bruja</a></button>                  
+                    <a href="index1.html" style="width:18vw; height:15vh; " class="main-button main-button-skin" onclick="cambiarOutfit('img/pepitatraje/pepitabruja.png')">Pepita<br>Bruja</a>
                 </div>
             </div>
           </div>
@@ -227,9 +237,6 @@
     </main>
 
   
-    
-  
-    <script src="script/nivel1.js"></script>
     <script src="script/menu.js"></script>
     <script src="script/traje.js"></script>    
     <!-- BOOTSTRAP -->

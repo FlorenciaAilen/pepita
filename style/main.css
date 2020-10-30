@@ -13,7 +13,9 @@
 }
 
 #titulo{
-    margin-top: 3rem;
+    width: 55vw;
+    height: 50vh;
+    margin-top: -40px;
 }
 
 /*PROPIEDADES DE VISTA*/
@@ -35,7 +37,7 @@
 /*GAME - MENU -FRAME*/
 
 main{
-    background-image: url("../img/espacio-con-estrellas-2899.jpg");
+    background-image: url("../img/background.jpg");
     background-size :'cover';
     background-repeat: no-repeat;
     background-size: cover;
@@ -45,43 +47,45 @@ main{
 
 .frame{
     position: absolute;
-    width: 600px;
-    height:  500px;
-
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+   
 }
-#main p{
+#main p,p{
 
     text-shadow: 0px 0px 8px rgba(24, 175, 32, 0.897);
-}
-p{
-    font-size: 30px;
+    font-size: 25px;
     color: #EEE;
 }
 
 .frame .main-button{
+    justify-content: center;
     -webkit-transition: border-radius 1s, text-shadow 1s, color 1s;
     transition: border-radius 1s, text-shadow 1s, color 1s;
-    font-size: 30px;
-    color: #EEE;
-    margin: 10px;
+    font-size: 1.5rem;
     padding: 10px;
-    width: 300px;
-    height: 70px;
+    display: block;
+    width: 20vw;
+    margin: 10px 10px;
+    height: 10vh;
+    text-align: center;
     background: none;
     text-shadow: 0px 0px 8px rgba(24, 175, 32, 0.897);
+    color: #EEE;
     border: 1px solid #dedede;
     border-radius: 3px;
-    display: inline-block;
     text-decoration: none;
     border-color: #8dc5da #76b7cf #63abc7;
     box-shadow: 0px 3px 5px rgba(255,255,255,0.5);
 }
 
-.main-button-skin > a{
+.pepi-card a {
     text-decoration: none;
     color: #EEE;
+    font-size: 10px;
 }
-
 .frame .main-button:hover{
     border-radius: 20px;
     text-shadow: 0px 0px 50px rgb(255, 255, 255);
@@ -99,20 +103,47 @@ p{
     text-align: center;
 }
 
-#pepita-menu{
-    height: -40%;
+.menu-container{
+    display: flex;
     position: relative;
-    left: -10%;
 }
 
-#img-pepita{
-    height: 100%;
+ #pepita-menu{
     position: absolute;
-    left: -10%;
+    left:20%;
+} 
+
+#img-pepita{
+    height: 30vh;
+   
+}
+
+.botones-principales {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #logoCodeQueens{
-    height: 80px;
+    height: 80px; 
+    animation: sizeCQ 1s linear infinite;
+}
+.cq{
+    margin-top: -30px;   
+}
+@keyframes sizeCQ{
+
+    0%{
+      transform:  scale(1);
+    }
+    50%{
+        transform:   scale(1.1);
+    }
+    100%{
+        transform:  scale(1);
+    }
+
 }
 
 /* -------------------------FLECHAS-------------------------- */
@@ -233,7 +264,7 @@ text-align: center;
     flex-direction: column;
 }
 .nivel-1{
-    background-image: url("../img/lab1/uno.jpg");
+    background-image: url("../img/background.jpg");
     background-size: cover;
 }
 /*----------------------------modal-----------------------------*/
@@ -279,8 +310,9 @@ border:none  !important ;
 }
 
 /* SKINS */
+
 #cont{
-    padding-top: 5%;
+    padding-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -292,30 +324,13 @@ border:none  !important ;
 }
 #contskin{
     padding-top: 15%;
-    width: 100%;
+    width: 100vw;
 }
 
 .skin:hover{
     transform: scale(1.25);
 }
-.main-button-skin{
-    -webkit-transition: border-radius 1s, text-shadow 1s, color 1s;
-    transition: border-radius 1s, text-shadow 1s, color 1s;
-    font-size: 30px;
-    color: #EEE;
-    margin: 10px;
-    padding: 10px;
-    width: 300px;
-    height: 100px;
-    background: none;
-    text-shadow: 0px 0px 8px rgba(24, 175, 32, 0.897);
-    border: 1px solid #dedede;
-    border-radius: 3px;
-    display: inline-block;
-    text-decoration: none;
-    border-color: #8dc5da #76b7cf #63abc7;
-    box-shadow: 0px 3px 5px rgba(255,255,255,0.5);
-}
+
 .main-button-skin:hover{
     border-radius: 20px;
     text-shadow: 0px 0px 50px rgb(255, 255, 255);
