@@ -253,6 +253,13 @@ function colisiones() {//COLISION DE BALA CON ENEMIGO
 		}
 	}
 }
+
+function finalNivel() {
+  
+        console.log("final")
+        let button = document.getElementById('siguiente')
+        button.classList.remove('hidden')
+ }
 function gameOver() {//MUESTRA LOS CARTELES CORRESPONDIENTES
 	if (enemigosVivos == 0) {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -265,7 +272,8 @@ function gameOver() {//MUESTRA LOS CARTELES CORRESPONDIENTES
 		imgGana.onload = function () {
 			ctx.drawImage(imgGana, (canvas.width) / 4, canvas.height / 3);
 		}
-		$('#gameWin').modal('show');
+		$('#gameWin').button('show');
+		finalNivel();
 	}
 	else if (contador == 33) {
 		mensaje("GAME OVER")
@@ -276,6 +284,7 @@ function gameOver() {//MUESTRA LOS CARTELES CORRESPONDIENTES
 			ctx.drawImage(imgPierde, canvas.width/2.7,canvas.height/3);
 		}
 		$('#gameOver').modal('show');
+		finalNivel()
 	}
 	endGame = true;
 	clearTimeout(disparoEnemigo);
