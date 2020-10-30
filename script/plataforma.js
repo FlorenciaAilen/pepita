@@ -37,11 +37,14 @@ var currentFrame = 0;
 var character = new Image()
 character.src = "img/character.png";
 
+var flag = new Image()
+flag.src = "img/flag.png";
+
 //MEDIDAS DEL CANVAS
 var canWidth =  window.innerWidth * 0.7;
 var canHeight = window.innerHeight * 0.8;
 
-var sheetWidth = 938;
+var sheetWidth = window.innerWidth;
 var sheetHeight= 680;
 // The attributes of the playerPlatform.
 const monster = new Image();
@@ -142,6 +145,7 @@ function restartPosition(){
 function renderplayer(movement){
     pepita = new Image();
     pepita.src = `img/pepita_${movement}.png`;
+    ctx.drawImage(flag, 900, 175,80,80);
     ctx.drawImage(pepita, playerPlatform.x - playerPlatform.width, playerPlatform.y - playerPlatform.height, playerPlatform.width, playerPlatform.height);
     ctx.lineWidth = 2;
     ctx.strokeStyle="#FF0000";
@@ -177,7 +181,7 @@ function createplat(){
         {
             x: 700,
             y: 250,
-            width: 250,
+            width: 270,
             height: 15
         }
     );
@@ -265,6 +269,10 @@ function loop() {
         restartPosition();
     }
 
+    if(playerPlatform.x + playerPlatform.width > 0 + canvas.width){
+        window.location="three.html";
+    }
+
     if (i > -1){
         playerPlatform.jump = false;
         playerPlatform.y = platforms[i].y;    
@@ -278,7 +286,7 @@ function loop() {
     renderplayer(side);
     renderplat();
 }
-canvas=document.getElementById("canvasTwo");
+canvas=document.getElementById("canvas");
 ctx=canvas.getContext("2d");
 ctx.canvas.height = canHeight;
 ctx.canvas.width = canWidth;
