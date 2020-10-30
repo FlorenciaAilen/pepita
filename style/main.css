@@ -37,7 +37,7 @@
 /*GAME - MENU -FRAME*/
 
 main{
-    background-image: url("../img/espacio-con-estrellas-2899.jpg");
+    background-image: url("../img/background.jpg");
     background-size :'cover';
     background-repeat: no-repeat;
     background-size: cover;
@@ -264,7 +264,7 @@ text-align: center;
     flex-direction: column;
 }
 .nivel-1{
-    background-image: url("../img/lab1/uno.jpg");
+    background-image: url("../img/background.jpg");
     background-size: cover;
 }
 /*----------------------------modal-----------------------------*/

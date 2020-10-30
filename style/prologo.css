@@ -7,7 +7,7 @@
 }
 
 #body2{
-    background-image: url("../img/backgroundnivelcinco.jpg");
+    background-image: url("../img/background.jpg");
     color: #ffbe00;
     font-size: 5vw;
     line-height: 1.3;
@@ -37,7 +37,8 @@
     right: 13%;
     height: 100%;
     animation-name: play;
-    animation-duration: 60s;
+    animation-duration: 50s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
     visibility: hidden;
 }
@@ -60,7 +61,7 @@ p{
 @keyframes play{
     0%{
         visibility: visible;
-        transform: rotateX(10deg) translate3d(0, 100rem, 0);
+        transform: rotateX(10deg) translate3d(0, 61rem, 0);
         opacity:1;
     }
     85%{
@@ -75,7 +76,7 @@ p{
 
 #button{
     animation-name: showbutton;
-    animation-delay: 27s;
+    animation-delay: 24s;
     visibility: hidden;
     animation-fill-mode: forwards;
   -webkit-transition: border-radius 1s, text-shadow 1s, color 1s;
